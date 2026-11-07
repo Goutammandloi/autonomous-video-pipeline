@@ -1,0 +1,106 @@
+[
+  {
+    "shot_id": 1,
+    "prompt": "cinematic anime 9:16 vertical extreme close-up. Polished reflective black obsidian conference table. A luxurious gold-embossed leather covenant contract labeled 'LEAGUE OVERSIGHT COVENANT' slides toward the viewer. In the dark background, towering rain-streaked glass window overlooking Saffron City cyberpunk skyline at night. Dramatic high-contrast corporate lighting.",
+    "negative": "blurry, low resolution, warped text, bad lighting, cheerful, cartoonish, 3d render",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88001
+  },
+  {
+    "shot_id": 2,
+    "prompt": "cinematic anime 9:16 vertical medium shot. 48-year-old CEO Vance Stirling, slicked-back silver-gray hair, sharp aristocratic face, cold blue eyes behind titanium glasses. Tailored charcoal three-piece suit with burgundy tie and gold helix pin. Standing before panoramic rain-streaked window at night. In his right hand, he holds a miniature pulsing violet cybernetic Helix Chip emitting faint purple circuitry light. High-end anime cell shading, ominous lighting.",
+    "negative": "chibi, childish, deformed hands, extra fingers, cartoonish, low resolution",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88002
+  },
+  {
+    "shot_id": 3,
+    "prompt": "cinematic anime 9:16 vertical close-up. Vance Stirling's sharp face, cold smirk, titanium spectacles reflecting scrolling violet digital telemetry code. Silver hair neatly combed. Dramatic underlighting with purple and charcoal shadows, high-contrast shonen anime aesthetic.",
+    "negative": "blurry, distorted face, asymmetrical eyes, low resolution",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88003
+  },
+  {
+    "shot_id": 4,
+    "prompt": "cinematic anime 9:16 vertical medium close-up, Dutch angle. 16-year-old hero Ash Ketchum slamming both fists down on obsidian boardroom table. Athletic build, messy jet-black spiky hair under red-and-white trainer cap, royal-blue vest with white collar and gold trim over charcoal compression shirt. Double zig-zag cheek marks, fiery brown eyes filled with moral outrage. Yellow Pikachu on his shoulder in battle stance, red cheeks crackling with golden electric arcs. Dynamic anime lighting.",
+    "negative": "10-year-old child, chibi, blurry, extra fingers, soft cartoon",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88004
+  },
+  {
+    "shot_id": 5,
+    "prompt": "cinematic anime 9:16 vertical medium shot. Four futuristic Consortium tactical enforcers in matte-black hydraulic exoskeleton combat armor. Glowing amber tactical HUD visors, holding heavy electromagnetic stun carbines. Amber laser sight lines cutting through the dark boardroom air. Red emergency warning light glowing above steel doors.",
+    "negative": "blurry, distorted armor, low resolution, bad proportions",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88005
+  },
+  {
+    "shot_id": 6,
+    "prompt": "cinematic anime 9:16 vertical close-up hero shot. Ash Ketchum thrusts his gloved arm forward in a dynamic battle command. Alolan Z-Ring on his wrist blazes with cyan aura, Mega Keystone bracelet catching the light. Cap bill angled upward, double cheek zig-zag marks glowing with golden voltage. Pikachu leaping off his shoulder surrounded by a sphere of crackling 10-million-volt golden lightning. Masterpiece anime keyframe.",
+    "negative": "childish, blurry, low resolution, extra arms, weak posture",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88006
+  },
+  {
+    "shot_id": 7,
+    "prompt": "cinematic anime 9:16 vertical wide shot. Catastrophic golden electrical explosion completely shattering a giant 40th-floor glass skyscraper window into millions of glittering shards. Lightning bolts arc across ceiling and floor. Armored enforcers blown off their feet by kinetic shockwave. Outside the shattered window: stormy night rainstorm and lightning over Saffron City skyline. Ultra-detailed anime action spectacle.",
+    "negative": "blurry, flat lighting, 3d CGI render, low resolution",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88007
+  },
+  {
+    "shot_id": 8,
+    "prompt": "cinematic anime 9:16 vertical wide dynamic dive. Ash Ketchum and Pikachu freefalling through the midnight rainstorm outside a massive glass skyscraper. Ash in athletic dive posture, cap held onto head with one gloved hand, coat whipping in the storm winds. Lightning illuminates rain droplets frozen mid-air around them. Below: dizzying vertical perspective of neon Saffron City streets 40 floors down. Masterful anime cinematography.",
+    "negative": "awkward limbs, stiff pose, cartoonish, low resolution",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88008
+  },
+  {
+    "shot_id": 9,
+    "prompt": "cinematic anime 9:16 vertical action medium shot. Pikachu executes an acrobatic mid-fall flip, tail transforming into glowing metallic silver Iron Tail, striking a vertical steel construction girder. Massive spray of brilliant golden-orange friction sparks illuminates the scene. Ash Ketchum clutching structural cables with gloved hand, utilizing the momentum brake. Torrential rain splashing off steel. Dynamic anime motion blur.",
+    "negative": "blurry face, missing tail, distorted body, 3d CGI",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88009
+  },
+  {
+    "shot_id": 10,
+    "prompt": "cinematic anime 9:16 vertical medium shot. 16-year-old Ash Ketchum landed in a soaked three-point athletic crouch on a dark gravel rooftop at night. Rainwater dripping from his cap brim and dark messy hair. His royal-blue vest soaked with rain sheen. Pikachu in battle crouch beside him on wet asphalt, steam rising from Pikachu's electric cheeks. Atmospheric anime rain reflections, cool teal and dark charcoal tones.",
+    "negative": "childish, dry clothes, cheerful, low resolution, warped limbs",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88010
+  },
+  {
+    "shot_id": 11,
+    "prompt": "cinematic anime 9:16 vertical close-up. Ash Ketchum's chest and intense face in shadow. Four distinct razor-sharp crimson laser dots converge directly over the World Monarch insignia on his chest. Raindrops cut through the bright red laser lines. Ash's brown eyes widen in sudden shock and tactical awareness. Cinematic anime suspense lighting.",
+    "negative": "blurry, distorted face, smiling, sunny, cartoonish",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88011
+  },
+  {
+    "shot_id": 12,
+    "prompt": "cinematic anime 9:16 vertical wide shot. Four cybernetic Houndoom stalking forward through billowing steam on a dark wet rooftop. Curved horns with titanium reinforcement, glowing violet Helix Neural Chips embedded between their brows. Hydraulic leg braces, glowing amber cyber-eyes, fangs crackling with dark violet electric fire. Menacing predatory anime composition.",
+    "negative": "friendly dogs, blurry, cute, cartoonish, low resolution",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88012
+  },
+  {
+    "shot_id": 13,
+    "prompt": "cinematic anime 9:16 vertical dramatic standoff. Ash Ketchum and Pikachu surrounded on rooftop by dark cyber-hounds. Suddenly, the storm sky directly above them ignites in blinding crimson-orange thermal fire. A colossal winged dragon silhouette (Charizard) swoops through storm clouds, vaporizing rain into steam. Bold glowing kinetic anime text in lower third: 'EPISODE 2 NEXT'. Peak cliffhanger shonen anime visual.",
+    "negative": "blurry, low resolution, distorted text, cartoonish",
+    "width": 1080,
+    "height": 1920,
+    "seed": 88013
+  }
+]

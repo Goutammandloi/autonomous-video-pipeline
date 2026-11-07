@@ -1,0 +1,81 @@
+# ======================================================================
+# KLING AI / RUNWAY GEN-3 / LUMA DREAM MACHINE I2V MOTION PROMPTS
+# ======================================================================
+
+**Shot 01 (3.0s) — Camera: slow_push_in | Framing: extreme_close_up**
+Input Keyframe: shot_01_keyframe.png
+Motion Prompt: Camera slowly pushes in as the gold-embossed folder glides across the dark polished table surface, leaving a subtle reflection.
+Motion Intensity: 6 / 10
+Camera Vector: slow_push_in
+
+**Shot 02 (4.5s) — Camera: slow_push_in | Framing: medium_shot**
+Input Keyframe: shot_02_keyframe.png
+Motion Prompt: Camera pushes in smoothly. Stirling slightly rotates the glowing violet chip between his thumb and forefinger, violet light casting highlights on his glasses.
+Motion Intensity: 6 / 10
+Camera Vector: slow_push_in
+
+**Shot 03 (4.5s) — Camera: static | Framing: close_up**
+Input Keyframe: shot_03_keyframe.png
+Motion Prompt: Subtle camera stability. Stirling's cold smirk widens slightly as purple digital code scrolls across his glasses lenses.
+Motion Intensity: 6 / 10
+Camera Vector: static
+
+**Shot 04 (4.5s) — Camera: dutch_tilt | Framing: medium_close_up**
+Input Keyframe: shot_04_keyframe.png
+Motion Prompt: Dutch tilt camera shakes violently on the fist slam impact. Ash leans forward aggressively as electric sparks jump from Pikachu's cheeks.
+Motion Intensity: 6 / 10
+Camera Vector: dutch_tilt
+
+**Shot 05 (4.5s) — Camera: whip_pan | Framing: medium_shot**
+Input Keyframe: shot_05_keyframe.png
+Motion Prompt: Fast whip-pan snap to the enforcers raising stun rifles in unison, amber laser dots locking forward as hydraulic armor joints hiss.
+Motion Intensity: 6 / 10
+Camera Vector: whip_pan
+
+**Shot 06 (4.5s) — Camera: slow_push_in | Framing: close_up**
+Input Keyframe: shot_06_keyframe.png
+Motion Prompt: Camera pushes in rapidly as Ash shouts command, golden lightning trails flare from Pikachu leaping into foreground.
+Motion Intensity: 6 / 10
+Camera Vector: slow_push_in
+
+**Shot 07 (5.0s) — Camera: handheld_organic | Framing: wide_shot**
+Input Keyframe: shot_07_keyframe.png
+Motion Prompt: Handheld camera violently recoils from the blast impact. Slow-motion glass fragments shower outward into the rainy night void.
+Motion Intensity: 6 / 10
+Camera Vector: handheld_organic
+
+**Shot 08 (5.0s) — Camera: tracking_follow | Framing: wide_shot**
+Input Keyframe: shot_08_keyframe.png
+Motion Prompt: Camera tracks vertically downward at matching freefall speed, neon lights streaking past as rain whips across lens.
+Motion Intensity: 6 / 10
+Camera Vector: tracking_follow
+
+**Shot 09 (5.0s) — Camera: tracking_follow | Framing: medium_shot**
+Input Keyframe: shot_09_keyframe.png
+Motion Prompt: Pikachu flips and slams tail against steel girder, heavy friction sparks erupting outward in a blinding arc as descent abruptly decelerates.
+Motion Intensity: 6 / 10
+Camera Vector: tracking_follow
+
+**Shot 10 (5.0s) — Camera: slow_push_in | Framing: medium_shot**
+Input Keyframe: shot_10_keyframe.png
+Motion Prompt: Ash rolls through landing into low crouch, water droplets flying off his cap and vest, looking up sharply into the darkness.
+Motion Intensity: 6 / 10
+Camera Vector: slow_push_in
+
+**Shot 11 (5.0s) — Camera: static | Framing: close_up**
+Input Keyframe: shot_11_keyframe.png
+Motion Prompt: Camera remains dead still. Four laser beams dart across his jacket before snapping together into an overlapping red crosshair on his chest.
+Motion Intensity: 6 / 10
+Camera Vector: static
+
+**Shot 12 (5.0s) — Camera: slow_push_in | Framing: wide_shot**
+Input Keyframe: shot_12_keyframe.png
+Motion Prompt: The four cyber-hounds prowl slowly out of steam plumes toward the camera, fangs dripping violet sparks as hydraulic joints hiss.
+Motion Intensity: 6 / 10
+Camera Vector: slow_push_in
+
+**Shot 13 (4.5s) — Camera: dutch_tilt | Framing: medium_two_shot**
+Input Keyframe: shot_13_keyframe.png
+Motion Prompt: The sky above violently explodes in crimson dragon fire, vaporizing the rain into steam as the winged shadow descends. Sudden hard cut to black.
+Motion Intensity: 6 / 10
+Camera Vector: dutch_tilt
