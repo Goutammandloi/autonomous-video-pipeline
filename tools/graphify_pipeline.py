@@ -112,7 +112,17 @@ def build_project_knowledge_graph(root_dir: str = ".") -> nx.DiGraph:
                 if node.startswith("shot_") and node.replace("shot_", "") in kf_file.stem:
                     G.add_edge(node, kid, relationship="RENDERED_KEYFRAME")
 
-    # 5. Ingest Skills & Agents
+    # 5. Ingest Video Clip Assets
+    video_dir = root / "data" / "video_clips"
+    if video_dir.exists():
+        for vid_file in video_dir.glob("*.mp4"):
+            vid_id = f"vid_{vid_file.stem}"
+            G.add_node(vid_id, label=vid_file.name, type="VideoClipAsset", group="video")
+            for node in list(G.nodes):
+                if node.startswith("shot_") and node.replace("shot_", "") in vid_file.stem:
+                    G.add_edge(node, vid_id, relationship="SYNTHESIZED_MOTION_CLIP")
+
+    # 6. Ingest Skills & Agents
     skills_dir = root / ".agents" / "skills"
     if skills_dir.exists():
         for skill_folder in skills_dir.iterdir():

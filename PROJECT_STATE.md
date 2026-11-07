@@ -27,8 +27,8 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
 | **Stage 1: Idea $\rightarrow$ Story $\rightarrow$ Script Engine** | Structured JSON screenplay generator with viral pacing, character tags, and acoustic cues | 🟢 Completed | Agentic Scripting Unit |
 | **Stage 2: Visual Bible & Keyframe Generator** | Automated prompt builder, character/environment consistency locking, reference image chaining | 🟢 Completed | Asset Generator + Multimodal Evaluator |
 | **Stage 3: Voiceover & Lip-Sync Synthesis** | Google Cloud TTS / Edge-TTS audio gen + audio alignment + lip-sync model integration | 🟢 Completed | Audio Synthesis Unit |
-| **Stage 4: I2V Motion Generation & Asset Inset** | Image-to-Video generation (Veo / Runway / Kling / open-source) + screen replacement compositing | 🟡 In Progress | Motion Engine |
-| **Stage 5: Autonomous Assembly & QA Monitor** | FFmpeg/Remotion programmatic timeline assembly, caption burning, automated glitch & sync evaluator | ⚪ Queued | Video Assembly & QA Agent |
+| **Stage 4: I2V Motion Generation & Asset Inset** | Image-to-Video generation (Veo / Runway / Kling / open-source) + screen replacement compositing | 🟢 Completed | Motion Engine |
+| **Stage 5: Autonomous Assembly & QA Monitor** | FFmpeg/Remotion programmatic timeline assembly, caption burning, automated glitch & sync evaluator | 🟡 In Progress | Video Assembly & QA Agent |
 | **Stage 6: Dispatch & Social Media Scheduler** | YouTube Shorts API, Instagram Graph API, scheduling queue, webhook triggers | ⚪ Queued | Social Dispatcher |
 
 ---
@@ -82,5 +82,13 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
 - Implemented `src/audio/mixer.py`: Dynamic sidechain compression engine attenuating BGM by 12.0 dB during dialogue bursts; normalized master soundtrack to ITU-R BS.1770 -14.0 LUFS (-1.0 dBTP ceiling).
 - Verified test suite: `tests/test_audio_engine.py` validated all 5 shots dialogue synthesis, subtitle generation (`data/audio/subtitles.srt`), and mastered composite (`data/audio/master_soundtrack.wav`).
 - Updated Knowledge Graph: Ingested audio modules and assets, expanding topology to 96 nodes and 79 relationships.
+
+### [2026-11-07] Feature 4: Motion Synthesis, Dynamic Screen Inset & Optical Flow QA (Stage 4 Complete)
+- Implemented `src/compositor/screen_warper.py`: OpenCV 4-point homography perspective warping with `CornerPoints` schema, bilinear interpolation, and boundary feathering to seamlessly composite screen assets (e.g., cyber terminal / Netflix screen) into video frames.
+- Implemented `src/motion/schemas.py`: Data models for `MotionConfig`, `CameraMotionType` (`PAN_LEFT`, `SLOW_ZOOM_IN`, `DYNAMIC_TRACK`), `MotionQualityReport`, and `GeneratedMotionClip`.
+- Implemented `src/motion/glitch_detector.py`: Gunnar Farneback dense optical flow evaluation (`cv2.calcOpticalFlowFarneback`) with statistical motion anomaly detection ($Z_t > 3.5$ or velocity jump ratio $> 2.5\times$).
+- Implemented `src/motion/motion_engine.py`: CFR 30.0 fps $1080 \times 1920$ motion engine supporting Veo 2 / local synthesis with automated self-healing remediation (automatic velocity damping by $0.65\times$ when optical flow spikes occur).
+- Verified test suite: `tests/test_motion_and_compositor.py` generated and validated all 5 MP4 motion clips in `data/video_clips/` (Shot 3 featuring perspective terminal screen inset).
+
 
 
