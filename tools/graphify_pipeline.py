@@ -122,7 +122,36 @@ def build_project_knowledge_graph(root_dir: str = ".") -> nx.DiGraph:
                 if node.startswith("shot_") and node.replace("shot_", "") in vid_file.stem:
                     G.add_edge(node, vid_id, relationship="SYNTHESIZED_MOTION_CLIP")
 
-    # 6. Ingest Skills & Agents
+    # 6. Ingest Final Master Video Assets
+    final_dir = root / "data" / "final"
+    if final_dir.exists():
+        for master_file in final_dir.glob("*.mp4"):
+            m_id = f"master_{master_file.stem}"
+            G.add_node(m_id, label=f"Master: {master_file.name}", type="MasterVideoAsset", group="master")
+            # Connect all video clips to master video
+            for node in list(G.nodes):
+                if node.startswith("vid_shot_"):
+                    G.add_edge(node, m_id, relationship="ASSEMBLED_INTO_MASTER")
+
+    # 7. Ingest Social Scheduling Campaigns
+    schedules_dir = root / "data" / "schedules"
+    if schedules_dir.exists():
+        for sched_file in schedules_dir.glob("*.json"):
+            try:
+                s_data = json.loads(sched_file.read_text(encoding="utf-8"))
+                batches = s_data if isinstance(s_data, list) else [s_data]
+                for b in batches:
+                    b_id = f"campaign_{b.get('batch_id', 'batch')}"
+                    G.add_node(b_id, label=f"Campaign: {b.get('project_title', 'Social Batch')}", type="ScheduledCampaign", group="distribution")
+                    for job in b.get("jobs", []):
+                        jid = f"job_{job.get('job_id', 'job')}"
+                        p_label = job.get("platform", "platform").replace("_", " ").title()
+                        G.add_node(jid, label=f"Post: {p_label}", type="PlatformDispatchJob", group="distribution", url=job.get("remote_url"))
+                        G.add_edge(b_id, jid, relationship="DISPATCH_CHANNEL")
+            except Exception:
+                pass
+
+    # 8. Ingest Skills & Agents
     skills_dir = root / ".agents" / "skills"
     if skills_dir.exists():
         for skill_folder in skills_dir.iterdir():

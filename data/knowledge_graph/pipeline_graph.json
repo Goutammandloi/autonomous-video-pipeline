@@ -344,6 +344,195 @@
       "group": "code"
     },
     {
+      "id": "mod_metadata_generator",
+      "label": "metadata_generator.py",
+      "type": "CodeModule",
+      "path": "src/distribution/metadata_generator.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_SocialMetadataGenerator",
+      "label": "SocialMetadataGenerator",
+      "type": "ClassSchema",
+      "source": "mod_metadata_generator",
+      "group": "schema"
+    },
+    {
+      "id": "fn_metadata_generator_generate_all_platform_metadata",
+      "label": "generate_all_platform_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "fn_metadata_generator_generate_youtube_metadata",
+      "label": "generate_youtube_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "fn_metadata_generator_generate_instagram_metadata",
+      "label": "generate_instagram_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "fn_metadata_generator_generate_linkedin_metadata",
+      "label": "generate_linkedin_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "fn_metadata_generator_generate_tiktok_metadata",
+      "label": "generate_tiktok_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "fn_metadata_generator_generate_twitter_metadata",
+      "label": "generate_twitter_metadata()",
+      "type": "Function",
+      "source": "mod_metadata_generator",
+      "group": "code"
+    },
+    {
+      "id": "mod_scheduler",
+      "label": "scheduler.py",
+      "type": "CodeModule",
+      "path": "src/distribution/scheduler.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_SocialScheduler",
+      "label": "SocialScheduler",
+      "type": "ClassSchema",
+      "source": "mod_scheduler",
+      "group": "schema"
+    },
+    {
+      "id": "fn_scheduler_calculate_optimal_slot",
+      "label": "calculate_optimal_slot()",
+      "type": "Function",
+      "source": "mod_scheduler",
+      "group": "code"
+    },
+    {
+      "id": "fn_scheduler_schedule_campaign",
+      "label": "schedule_campaign()",
+      "type": "Function",
+      "source": "mod_scheduler",
+      "group": "code"
+    },
+    {
+      "id": "fn_scheduler__persist_schedules",
+      "label": "_persist_schedules()",
+      "type": "Function",
+      "source": "mod_scheduler",
+      "group": "code"
+    },
+    {
+      "id": "cls_PlatformType",
+      "label": "PlatformType",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_PrivacyStatus",
+      "label": "PrivacyStatus",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_SocialPlatformMetadata",
+      "label": "SocialPlatformMetadata",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_SchedulingSlot",
+      "label": "SchedulingSlot",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_DispatchJob",
+      "label": "DispatchJob",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_DispatchBatchReport",
+      "label": "DispatchBatchReport",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "mod_social_dispatcher",
+      "label": "social_dispatcher.py",
+      "type": "CodeModule",
+      "path": "src/distribution/social_dispatcher.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_SocialDispatcher",
+      "label": "SocialDispatcher",
+      "type": "ClassSchema",
+      "source": "mod_social_dispatcher",
+      "group": "schema"
+    },
+    {
+      "id": "fn_social_dispatcher_dispatch_job",
+      "label": "dispatch_job()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
+      "id": "fn_social_dispatcher__dispatch_youtube_shorts",
+      "label": "_dispatch_youtube_shorts()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
+      "id": "fn_social_dispatcher__dispatch_instagram_reels",
+      "label": "_dispatch_instagram_reels()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
+      "id": "fn_social_dispatcher__dispatch_linkedin",
+      "label": "_dispatch_linkedin()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
+      "id": "fn_social_dispatcher__dispatch_tiktok",
+      "label": "_dispatch_tiktok()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
+      "id": "fn_social_dispatcher__dispatch_twitter",
+      "label": "_dispatch_twitter()",
+      "type": "Function",
+      "source": "mod_social_dispatcher",
+      "group": "code"
+    },
+    {
       "id": "mod_glitch_detector",
       "label": "glitch_detector.py",
       "type": "CodeModule",
@@ -809,6 +998,39 @@
       "group": "video"
     },
     {
+      "id": "master_appin_master_9x16",
+      "label": "Master: appin_master_9x16.mp4",
+      "type": "MasterVideoAsset",
+      "group": "master"
+    },
+    {
+      "id": "campaign_batch_aa3efa50",
+      "label": "Campaign: Appin Career Ka Asli Netflix",
+      "type": "ScheduledCampaign",
+      "group": "distribution"
+    },
+    {
+      "id": "job_job_youtube_shorts_77c7a1",
+      "label": "Post: Youtube Shorts",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://youtube.com/shorts/yt_a252e25857"
+    },
+    {
+      "id": "job_job_instagram_reels_0a0f3d",
+      "label": "Post: Instagram Reels",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://instagram.com/reel/ig_media_4ac42c827b"
+    },
+    {
+      "id": "job_job_linkedin_4ec3b3",
+      "label": "Post: Linkedin",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://www.linkedin.com/feed/update/urn:li:digitalmediaAsset:db54f8a38f9a"
+    },
+    {
       "id": "skill_ai-video-generation",
       "label": "Skill: ai-video-generation",
       "type": "AgentSkill",
@@ -985,6 +1207,36 @@
     {
       "from": "mod_schemas",
       "to": "cls_AcousticMasterReport",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_PlatformType",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_PrivacyStatus",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_SocialPlatformMetadata",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_SchedulingSlot",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_DispatchJob",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_DispatchBatchReport",
       "relationship": "DEFINES_CLASS"
     },
     {
@@ -1200,6 +1452,96 @@
     {
       "from": "mod_screen_warper",
       "to": "fn_screen_warper_create_mock_terminal_screen",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "cls_SocialMetadataGenerator",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_all_platform_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_youtube_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_instagram_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_linkedin_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_tiktok_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_metadata_generator",
+      "to": "fn_metadata_generator_generate_twitter_metadata",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_scheduler",
+      "to": "cls_SocialScheduler",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_scheduler",
+      "to": "fn_scheduler_calculate_optimal_slot",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_scheduler",
+      "to": "fn_scheduler_schedule_campaign",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_scheduler",
+      "to": "fn_scheduler__persist_schedules",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "cls_SocialDispatcher",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher_dispatch_job",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher__dispatch_youtube_shorts",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher__dispatch_instagram_reels",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher__dispatch_linkedin",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher__dispatch_tiktok",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_social_dispatcher",
+      "to": "fn_social_dispatcher__dispatch_twitter",
       "relationship": "DEFINES_FUNC"
     },
     {
@@ -1471,11 +1813,51 @@
       "from": "shot_5",
       "to": "vid_shot_5_clip",
       "relationship": "SYNTHESIZED_MOTION_CLIP"
+    },
+    {
+      "from": "vid_shot_1_clip",
+      "to": "master_appin_master_9x16",
+      "relationship": "ASSEMBLED_INTO_MASTER"
+    },
+    {
+      "from": "vid_shot_2_clip",
+      "to": "master_appin_master_9x16",
+      "relationship": "ASSEMBLED_INTO_MASTER"
+    },
+    {
+      "from": "vid_shot_3_clip",
+      "to": "master_appin_master_9x16",
+      "relationship": "ASSEMBLED_INTO_MASTER"
+    },
+    {
+      "from": "vid_shot_4_clip",
+      "to": "master_appin_master_9x16",
+      "relationship": "ASSEMBLED_INTO_MASTER"
+    },
+    {
+      "from": "vid_shot_5_clip",
+      "to": "master_appin_master_9x16",
+      "relationship": "ASSEMBLED_INTO_MASTER"
+    },
+    {
+      "from": "campaign_batch_aa3efa50",
+      "to": "job_job_youtube_shorts_77c7a1",
+      "relationship": "DISPATCH_CHANNEL"
+    },
+    {
+      "from": "campaign_batch_aa3efa50",
+      "to": "job_job_instagram_reels_0a0f3d",
+      "relationship": "DISPATCH_CHANNEL"
+    },
+    {
+      "from": "campaign_batch_aa3efa50",
+      "to": "job_job_linkedin_4ec3b3",
+      "relationship": "DISPATCH_CHANNEL"
     }
   ],
   "metrics": {
-    "node_count": 134,
-    "edge_count": 112,
-    "density": 0.006284367635506678
+    "node_count": 166,
+    "edge_count": 144,
+    "density": 0.005257393209200438
   }
 }

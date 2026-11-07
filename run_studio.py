@@ -29,6 +29,12 @@ from src.assembly import (
     TimelineAssembler,
     AssemblyQAEvaluator
 )
+from src.distribution import (
+    PlatformType,
+    SocialMetadataGenerator,
+    SocialDispatcher,
+    SocialScheduler
+)
 from tools.graphify_pipeline import build_project_knowledge_graph
 
 
@@ -45,9 +51,10 @@ class VideoStudioPipeline:
         self.audio_dir = self.data_dir / "audio"
         self.video_clips_dir = self.data_dir / "video_clips"
         self.final_dir = self.data_dir / "final"
+        self.schedules_dir = self.data_dir / "schedules"
         self.preview_dir = self.data_dir / "preview"
 
-        for d in [self.decks_dir, self.keyframes_dir, self.audio_dir, self.video_clips_dir, self.final_dir, self.preview_dir]:
+        for d in [self.decks_dir, self.keyframes_dir, self.audio_dir, self.video_clips_dir, self.final_dir, self.schedules_dir, self.preview_dir]:
             d.mkdir(parents=True, exist_ok=True)
 
         self.scripting_engine = ScriptingEngine(output_dir=str(self.decks_dir))
@@ -58,6 +65,7 @@ class VideoStudioPipeline:
         self.subtitle_burner = SubtitleBurner()
         self.timeline_assembler = TimelineAssembler(subtitle_burner=self.subtitle_burner)
         self.assembly_evaluator = AssemblyQAEvaluator()
+        self.social_scheduler = SocialScheduler(schedules_dir=str(self.schedules_dir))
 
     def execute_full_pipeline(
         self,
@@ -143,6 +151,23 @@ class VideoStudioPipeline:
         print(f"  📊 Master QA Gate Score: {master_report.qa_score}/10.0 (A/V Sync Delta: {master_report.av_sync_delta_ms}ms | Passed: {master_report.qa_passed})")
 
         # -------------------------------------------------------------
+        # STAGE 6: MULTI-PLATFORM SOCIAL DISPATCH & SCHEDULER
+        # -------------------------------------------------------------
+        print("\n[STAGE 6] Generating Viral Copywriting & Scheduling Multi-Platform Campaigns...")
+        campaign_report = self.social_scheduler.schedule_campaign(
+            video_path=master_video_path,
+            shot_deck=shot_deck,
+            target_platforms=[
+                PlatformType.YOUTUBE_SHORTS,
+                PlatformType.INSTAGRAM_REELS,
+                PlatformType.LINKEDIN
+            ]
+        )
+        print(f"  ✅ Successfully scheduled {campaign_report.scheduled_jobs}/{campaign_report.total_jobs} platform campaigns.")
+        for j in campaign_report.jobs:
+            print(f"    • [{j.platform.value.upper()}] Scheduled: {j.scheduled_time_iso} | URL: {j.remote_url}")
+
+        # -------------------------------------------------------------
         # STUDIO PREVIEW: COMPILE INTERACTIVE HTML5 STUDIO DASHBOARD
         # -------------------------------------------------------------
         print("\n[STUDIO PREVIEW] Compiling Interactive HTML5 Production Studio Player...")
@@ -153,7 +178,8 @@ class VideoStudioPipeline:
             video_clips=video_clips,
             acoustic_report=acoustic_report,
             script_qa=script_qa,
-            master_report=master_report
+            master_report=master_report,
+            campaign_report=campaign_report
         )
         print(f"  🌐 Interactive Studio Dashboard: {preview_html_path}")
 
@@ -186,7 +212,8 @@ class VideoStudioPipeline:
         video_clips,
         acoustic_report,
         script_qa,
-        master_report=None
+        master_report=None,
+        campaign_report=None
     ) -> Path:
         """Generates a rich, interactive HTML5 audio/visual inspection deck."""
         out_html = self.preview_dir / "index.html"
@@ -228,6 +255,23 @@ class VideoStudioPipeline:
               <div class="qa-badge">Motion Flow Z: {clip.qa_result.max_flow_z_score if clip else 0.0} • {clip.status if clip else "QA_PASSED"}</div>
             </div>
             """
+
+        # Build campaign cards HTML
+        campaign_cards_html = ""
+        if campaign_report and campaign_report.jobs:
+            for job in campaign_report.jobs:
+                p_name = job.platform.value.replace("_", " ").title()
+                campaign_cards_html += f"""
+                <div style="background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px; flex: 1; min-width: 280px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 700; color: #38bdf8; font-size: 0.9rem;">{p_name}</span>
+                    <span style="background: #0284c7; color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 999px;">{job.status}</span>
+                  </div>
+                  <div style="font-size: 0.85rem; font-weight: 600; color: #f1f5f9; margin-bottom: 6px;">"{job.metadata.title}"</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 10px;">Scheduled: <strong>{job.scheduled_time_iso}</strong> (18:30 IST Peak)</div>
+                  <a href="{job.remote_url}" target="_blank" style="display: inline-block; background: #059669; color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">🔗 View Remote Asset</a>
+                </div>
+                """
 
         master_video_rel = "../final/appin_master_9x16.mp4"
         master_score = master_report.qa_score if master_report else 10.0
@@ -368,6 +412,14 @@ class VideoStudioPipeline:
             <audio controls src="../audio/master_soundtrack.wav"></audio>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- SCHEDULED SOCIAL CAMPAIGNS -->
+    <div style="margin-bottom: 32px;">
+      <h2 style="font-size: 1.25rem; margin-bottom: 14px; color: #bae6fd;">🚀 Multi-Platform Scheduled Campaigns</h2>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        {campaign_cards_html}
       </div>
     </div>
 
