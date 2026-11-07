@@ -3,7 +3,7 @@
 **System Name:** Autonomous Multi-Agent AI Video Studio  
 **Working Directory:** `C:\Users\yashu\.gemini\antigravity\scratch\autonomous-video-pipeline`  
 **GitHub Repository:** [Goutammandloi/autonomous-video-pipeline](https://github.com/Goutammandloi/autonomous-video-pipeline)  
-**Active Working Branch:** `dev` (Production base: `main`)  
+**Active Working Branch:** `pokemon-C-01` (Core engineering base: `dev`, Production: `main`)  
 **Engineer:** Yashu (B.Tech CSE - Systems, APIs, Agentic Orchestration)  
 **AI Pair Architect:** Antigravity (Google DeepMind Agentic Coding Assistant)  
 **Reference Origin:** Chat `4a356c94-6796-42fe-acba-f48c2f68a620` (Appin Technology 9:16 Video Ad Workflow)  
