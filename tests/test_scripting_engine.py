@@ -11,8 +11,8 @@ def run_test():
     print("=== Testing Feature 1: Scripting Engine & Supervisor Loop ===")
     engine = ScriptingEngine(output_dir=str(root_dir / "data" / "shot_decks"))
 
-    premise = "Elder sister confronts brother for bingeing Netflix during campus placements, only to discover he is hacking in a real-world Appin cybersecurity lab"
-    deck, critique = engine.generate_shot_deck(premise=premise, target_duration=18.5)
+    premise = "Silph-Macro Consortium issues an ultimatum to World Monarch Ash Ketchum to surrender his Pokémon to cybernetic Helix Chips, triggering a skyscraper window blast and rooftop ambush"
+    deck, critique = engine.generate_shot_deck(premise=premise, target_duration=60.0)
 
     print(f"\n[Result] Project: {deck.title}")
     print(f"[Result] Aspect Ratio: {deck.aspect_ratio.value}")

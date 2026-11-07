@@ -70,8 +70,8 @@ class VideoStudioPipeline:
     def execute_full_pipeline(
         self,
         premise: str,
-        target_duration: float = 18.5,
-        project_title: str = "Appin Career Ka Asli Netflix"
+        target_duration: float = 60.0,
+        project_title: str = "Project Origin: The Shattered Crown"
     ) -> dict:
         print("\n" + "="*70)
         print("🎬 STARTING AUTONOMOUS VIDEO STUDIO PIPELINE")
@@ -138,7 +138,7 @@ class VideoStudioPipeline:
         print("\n[STAGE 5] Assembling Master Video, Burning Kinetic Subtitles & Running Gatekeeper...")
         subtitle_segments = SubtitleBurner.segments_from_shot_deck_and_tracks(shot_deck, dialogue_tracks)
         clip_paths = [str(c.file_path) for c in video_clips]
-        master_video_path = str(self.final_dir / "appin_master_9x16.mp4")
+        master_video_path = str(self.final_dir / "project_origin_ep01_master_9x16.mp4")
 
         self.timeline_assembler.assemble_master_video(
             clip_paths=clip_paths,
@@ -273,7 +273,7 @@ class VideoStudioPipeline:
                 </div>
                 """
 
-        master_video_rel = "../final/appin_master_9x16.mp4"
+        master_video_rel = "../final/project_origin_ep01_master_9x16.mp4"
         master_score = master_report.qa_score if master_report else 10.0
         sync_delta = master_report.av_sync_delta_ms if master_report else 0.0
         file_mb = master_report.metrics.get("file_size_mb", 2.51) if master_report else 2.51

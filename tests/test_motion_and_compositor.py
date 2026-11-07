@@ -68,7 +68,7 @@ def run_test():
 
     # 3. Test Batch Motion Generation on Appin Shot Deck
     print("\n--- Test 3: Batch Video Clip Generation from Keyframes ---")
-    deck_path = root_dir / "data" / "shot_decks" / "appin_career_ka_asli_netflix_shot_deck.json"
+    deck_path = root_dir / "data" / "shot_decks" / "project_origin_ep01_shot_deck.json"
     with open(deck_path, "r", encoding="utf-8") as f:
         shot_deck = ProductionShotDeck.model_validate(json.load(f))
 

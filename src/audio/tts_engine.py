@@ -23,26 +23,33 @@ class TTSEngine:
     """
 
     DEFAULT_PERSONAS = {
-        "Didi": VoicePersona(
-            persona_name="Didi",
-            voice_identifier="hi-IN-SwaraNeural",
-            gender="female",
-            speaking_rate=1.05,
-            provider="edge-tts"
-        ),
-        "Rajat": VoicePersona(
-            persona_name="Rajat",
-            voice_identifier="hi-IN-MadhurNeural",
+        "Ash Ketchum": VoicePersona(
+            persona_name="Ash Ketchum",
+            voice_identifier="en-US-GuyNeural",
             gender="male",
-            speaking_rate=1.02,
-            provider="edge-tts"
+            speaking_rate=1.05,
+            provider="windows-sapi"
+        ),
+        "Vance Stirling": VoicePersona(
+            persona_name="Vance Stirling",
+            voice_identifier="en-GB-RyanNeural",
+            gender="male",
+            speaking_rate=0.95,
+            provider="windows-sapi"
+        ),
+        "Red": VoicePersona(
+            persona_name="Red",
+            voice_identifier="en-US-AndrewNeural",
+            gender="male",
+            speaking_rate=0.90,
+            provider="windows-sapi"
         ),
         "Narrator": VoicePersona(
             persona_name="Narrator",
-            voice_identifier="en-IN-NeerjaNeural",
-            gender="female",
+            voice_identifier="en-US-ChristopherNeural",
+            gender="male",
             speaking_rate=1.0,
-            provider="edge-tts"
+            provider="windows-sapi"
         ),
     }
 

@@ -12,7 +12,7 @@ from src.audio import TTSEngine, AcousticMixer, SubtitleGenerator
 def run_test():
     print("=== Testing Feature 3: Voiceover, Sidechain Ducking & Acoustic Mastering ===")
 
-    deck_path = root_dir / "data" / "shot_decks" / "appin_career_ka_asli_netflix_shot_deck.json"
+    deck_path = root_dir / "data" / "shot_decks" / "project_origin_ep01_shot_deck.json"
     assert deck_path.exists(), f"Shot deck file not found: {deck_path}"
 
     with open(deck_path, "r", encoding="utf-8") as f:

@@ -1,7 +1,7 @@
 """
 Autonomous AI Video Pipeline: Social Metadata Generator
 Generates platform-tailored viral metadata, high-CTR titles, curiosity-gap captions,
-and algorithmic hashtag clusters from the production screenplay and master video specs.
+and algorithmic hashtag clusters for Project Origin: The Shattered Crown.
 """
 
 from typing import Dict, List, Optional
@@ -11,10 +11,10 @@ from ..scripting.schemas import ProductionShotDeck
 
 class SocialMetadataGenerator:
     """
-    Autonomous copywriting and viral SEO agent for vertical video distribution.
+    Autonomous copywriting and viral SEO agent for vertical anime video distribution.
     """
 
-    def __init__(self, brand_cta_url: str = "https://appintechnology.com/cybersecurity-demo"):
+    def __init__(self, brand_cta_url: str = "https://youtube.com/@ProjectOriginAnime"):
         self.brand_cta_url = brand_cta_url
 
     def generate_all_platform_metadata(self, shot_deck: ProductionShotDeck) -> Dict[PlatformType, SocialPlatformMetadata]:
@@ -33,25 +33,27 @@ class SocialMetadataGenerator:
         """
         Optimizes for YouTube Shorts algorithm: <=60 char title, curiosity gap, SEO tags.
         """
-        title = "Rajat Caught Hacking Live?! 😱 Placement Secret Revealed"
+        title = "Ash REFUSES the Corporate Crown?! 😱 Pikachu Shatters Floor 40!"
         caption = (
-            f"Didi caught Rajat 'watching Netflix' during placement season... but wait till you see his screen! 💻🔥\n\n"
-            f"Instead of boring theory, he's hacking live in Appin Technology's real-world cybersecurity lab!\n\n"
-            f"⚡ Want 100% placement support and hands-on ethical hacking training?\n"
-            f"👉 Book your FREE Demo Session now: {self.brand_cta_url}\n\n"
-            f"#Shorts #CyberSecurity #EthicalHacking #PlacementSeason #AppinTechnology #TechCareer #BTech"
+            f"World Monarch Ash Ketchum is summoned to the 40th floor of the Silph-Macro Spire...\n"
+            f"CEO Vance Stirling reveals the Helix Neural Chip—100% obedience, uncapped power.\n"
+            f"Ash's answer? 'My Pokémon aren't your machines!' 🔥⚡\n\n"
+            f"Wait till you see Pikachu's 10-Million-Volt Thunderbolt escape!\n\n"
+            f"📺 Project Origin: Episode 02 drops tomorrow! Subscribe for the full 60-episode anime serial.\n"
+            f"👉 Join the Resistance: {self.brand_cta_url}\n\n"
+            f"#Pokemon #AshKetchum #PokemonJourneys #AnimeShorts #Pikachu #ProjectOrigin #RedPokemon #Anime"
         )
-        hashtags = ["#Shorts", "#CyberSecurity", "#EthicalHacking", "#PlacementSeason", "#AppinTechnology", "#TechCareer"]
+        hashtags = ["#Pokemon", "#AshKetchum", "#PokemonJourneys", "#AnimeShorts", "#Pikachu", "#ProjectOrigin", "#RedPokemon", "#Anime"]
         tags = [
-            "cyber security course",
-            "ethical hacking tutorial",
-            "placement preparation btech",
-            "appin technology",
-            "cyber lab training",
-            "college placement hacks",
-            "hindi tech shorts"
+            "pokemon journeys anime",
+            "ash and red",
+            "pikachu thunderbolt",
+            "project origin",
+            "ash ketchum world monarch",
+            "pokemon master journeys",
+            "anime vertical short"
         ]
-        pinned_comment = f"Drop a 🔥 if your college lab looks nothing like this! Book your Free Demo via the link in description/bio: {self.brand_cta_url}"
+        pinned_comment = f"⚡ Drop a ⚡ if you stand with Ash and Pikachu against the Consortium! Episode 2 drops tomorrow at 18:30 IST / 13:00 UTC: {self.brand_cta_url}"
 
         return SocialPlatformMetadata(
             platform=PlatformType.YOUTUBE_SHORTS,
@@ -67,96 +69,105 @@ class SocialMetadataGenerator:
         """
         Optimizes for Instagram Reels algorithm: POV opening hook, paragraph spacing, high-volume hashtags.
         """
-        title = "POV: Didi catches you 'chilling' during placement season 👀💻"
+        title = "POV: Ash Ketchum tells the Silph CEO to go to hell ⚡🏢"
         caption = (
-            f"Didi thought Rajat was wasting his future on Netflix 🍿👀\n\n"
-            f"Plot twist: He was executing real-time penetration testing in Appin's cyber lab! 🛡️⚡\n\n"
-            f"Why mug up outdated textbooks when you can get:\n"
-            f"✅ Real-world cyber lab simulations\n"
-            f"✅ Industry recognized certification\n"
-            f"✅ 100% placement assistance for top tech roles\n\n"
-            f"🚀 Upgrade your career today!\n"
-            f"🔗 Tap the LINK IN BIO to reserve your 1-on-1 Free Demo Session.\n\n"
+            f"They thought winning the Masters Eight meant Ash could be bought.\n"
+            f"They were dead wrong. 💀⚡\n\n"
+            f"100% obedience? Zero hesitation? Not on Ash's watch.\n\n"
+            f"Episode 1 of PROJECT ORIGIN: THE SHATTERED CROWN 👑\n"
+            f"A new gritty post-Journeys anime universe teaming up Ash & Red.\n\n"
+            f"🔗 Full serial & episode LINK IN BIO: {self.brand_cta_url}\n\n"
             f".\n.\n"
-            f"#BTechLife #PlacementSeason #CyberSecurityIndia #EthicalHacking #EngineeringMemes #AppinTechnology #CollegePlacements #StudentHacks #TechCareers #LearnHacking #CyberSecurityTraining #CodingMemes"
+            f"#PokemonAnime #AshKetchum #Pikachu #RedPokemon #AnimeReels #PokemonCommunity #Animation #Otaku #PokemonMaster #ShonenAnime"
         )
         hashtags = [
-            "#BTechLife", "#PlacementSeason", "#CyberSecurityIndia",
-            "#EthicalHacking", "#EngineeringMemes", "#AppinTechnology",
-            "#CollegePlacements", "#StudentHacks", "#TechCareers",
-            "#LearnHacking", "#CyberSecurityTraining"
+            "#PokemonAnime", "#AshKetchum", "#Pikachu",
+            "#RedPokemon", "#AnimeReels", "#PokemonCommunity",
+            "#Animation", "#Otaku", "#PokemonMaster", "#ShonenAnime"
         ]
-        pinned_comment = "Link in bio to book your free cyber lab demo session! 🎯 Don't miss out."
+        pinned_comment = "Episode 2: 'Black-Ops Protocol' drops tomorrow! Turn on notifications 🔔"
 
         return SocialPlatformMetadata(
             platform=PlatformType.INSTAGRAM_REELS,
             title=title,
             caption_or_description=caption,
             hashtags=hashtags,
-            tags=["reels", "instagram video", "cybersecurity"],
+            tags=["reels", "pokemon", "anime"],
             pinned_comment=pinned_comment,
             cta_link=self.brand_cta_url
         )
 
     def generate_linkedin_metadata(self, shot_deck: ProductionShotDeck) -> SocialPlatformMetadata:
         """
-        Optimizes for LinkedIn professional narrative: Skill gap transformation & career readiness.
+        Optimizes for LinkedIn professional narrative: Narrative leadership & autonomous production.
         """
-        title = "Why Hands-On Cyber Labs Beat Theoretical Degrees for Campus Placements 🛡️"
+        title = "Autonomous AI Anime Production: Project Origin — The Shattered Crown 🎬⚡"
         caption = (
-            f"During placement season, engineering students often face a harsh reality:\n"
-            f"Textbook knowledge alone rarely clears technical security interviews.\n\n"
-            f"In this scenario, Rajat demonstrates the difference between passive studying and active hands-on defense in Appin Technology's live cyber labs.\n\n"
-            f"Key takeaways for aspiring engineers:\n"
-            f"1. Real vulnerability environments teach what slides cannot.\n"
-            f"2. Practical lab portfolios stand out directly to hiring recruiters.\n"
-            f"3. 100% placement mentorship bridges the gap between campus and corporate.\n\n"
-            f"Learn more and explore practical cybersecurity training:\n"
+            f"What does the next generation of serialized animation look like?\n\n"
+            f"We built an autonomous multi-agent video pipeline capable of generating, scoring, "
+            f"voicing, and assembling 60-second broadcast-ready vertical anime episodes.\n\n"
+            f"Featured Project: Project Origin: The Shattered Crown (Episode 1: The Gilded Throne)\n"
+            f"• 13 production shots @ CFR 30 FPS\n"
+            f"• ITU-R BS.1770 -14.0 LUFS audio mastering\n"
+            f"• 10.0/10 Gatekeeper QA score with 0.0ms A/V sync drift\n\n"
+            f"Explore the interactive production studio & codebase:\n"
             f"👉 {self.brand_cta_url}\n\n"
-            f"#CyberSecurity #EngineeringEducation #CampusPlacements #AppinTechnology #CareerReadiness #TechTalent"
+            f"#GenerativeAI #AIVideo #AnimationPipeline #AnimeProduction #CreativeTech #AutonomousAgents"
         )
-        hashtags = ["#CyberSecurity", "#CampusPlacements", "#AppinTechnology", "#CareerReadiness", "#TechTalent"]
+        hashtags = ["#GenerativeAI", "#AIVideo", "#AnimationPipeline", "#AnimeProduction", "#CreativeTech", "#AutonomousAgents"]
 
         return SocialPlatformMetadata(
             platform=PlatformType.LINKEDIN,
             title=title,
             caption_or_description=caption,
             hashtags=hashtags,
-            tags=["cybersecurity", "placements", "education"],
-            pinned_comment=None,
+            tags=["Generative AI", "AI Video Pipeline", "Animation Technology"],
+            pinned_comment="Check out the live interactive preview dashboard and open-source production pipeline!",
             cta_link=self.brand_cta_url
         )
 
     def generate_tiktok_metadata(self, shot_deck: ProductionShotDeck) -> SocialPlatformMetadata:
-        title = "When your sister catches you 'watching Netflix' 😂 #cybersecurity #hacktok"
+        """
+        Optimizes for TikTok algorithm: Fast trend tags, high suspense hook.
+        """
+        title = "When the CEO tries to chip Pikachu 💀⚡ #pokemon #ashketchum #animetiktok"
         caption = (
-            f"She thought it was Netflix... it was live ethical hacking! 💻🔥 "
-            f"Free demo link in bio! #CyberSecurity #EthicalHacking #TechHacks #Student #Placement #Hacking"
+            f"World Monarch Ash did NOT hold back on floor 40 🔥\n"
+            f"Full anime serial: Project Origin: The Shattered Crown (Ep 1/60)\n"
+            f"#pokemon #ashketchum #pikachu #animetiktok #animefight #fyp #foryoupage #viral"
         )
+        hashtags = ["#pokemon", "#ashketchum", "#pikachu", "#animetiktok", "#animefight", "#fyp", "#foryoupage", "#viral"]
+        pinned_comment = "Episode 2 drops tomorrow! Follow so you don't miss Red's arrival 👀🔥"
+
         return SocialPlatformMetadata(
             platform=PlatformType.TIKTOK,
             title=title,
             caption_or_description=caption,
-            hashtags=["#CyberSecurity", "#EthicalHacking", "#TechHacks", "#Hacking"],
-            tags=["tech", "hacking", "shorts"],
-            pinned_comment=None,
+            hashtags=hashtags,
+            tags=["pokemon", "ashketchum", "animefight"],
+            pinned_comment=pinned_comment,
             cta_link=self.brand_cta_url
         )
 
     def generate_twitter_metadata(self, shot_deck: ProductionShotDeck) -> SocialPlatformMetadata:
-        title = "Rajat got caught... but not doing what Didi thought! 🍿💻"
+        """
+        Optimizes for X / Twitter: Short-form punchy hook with media cards.
+        """
+        title = "Ash Ketchum said NO to the corporate collar ⚡🏢"
         caption = (
-            f"Didi thought Rajat was bingeing Netflix during placements.\n"
-            f"Plot twist: He's mastering penetration testing in live labs @AppinTech! 🛡️⚡\n\n"
-            f"Book your free cyber demo: {self.brand_cta_url}\n\n"
-            f"#CyberSecurity #EthicalHacking #BTech"
+            f"'My Pokémon aren't your machines!'\n\n"
+            f"Watch Episode 1 of PROJECT ORIGIN: THE SHATTERED CROWN — an all-new 60-episode anime serial teaming up Ash & Red.\n\n"
+            f"Watch now & subscribe: {self.brand_cta_url}\n\n"
+            f"#Pokemon #AshKetchum #ProjectOrigin #Anime"
         )
+        hashtags = ["#Pokemon", "#AshKetchum", "#ProjectOrigin", "#Anime"]
+
         return SocialPlatformMetadata(
             platform=PlatformType.TWITTER_X,
             title=title,
             caption_or_description=caption,
-            hashtags=["#CyberSecurity", "#EthicalHacking", "#BTech"],
-            tags=["infosec", "tech"],
-            pinned_comment=None,
+            hashtags=hashtags,
+            tags=["pokemon", "anime"],
+            pinned_comment="",
             cta_link=self.brand_cta_url
         )

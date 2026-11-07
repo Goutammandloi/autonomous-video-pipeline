@@ -25,14 +25,14 @@ from src.distribution import (
 def run_test():
     print("=== Testing Feature 6: Multi-Platform Dispatch & Social Media Scheduler ===")
 
-    deck_path = root_dir / "data" / "shot_decks" / "appin_career_ka_asli_netflix_shot_deck.json"
+    deck_path = root_dir / "data" / "shot_decks" / "project_origin_ep01_shot_deck.json"
     assert deck_path.exists(), f"Shot deck file not found: {deck_path}"
 
     with open(deck_path, "r", encoding="utf-8") as f:
         deck_data = json.load(f)
     shot_deck = ProductionShotDeck.model_validate(deck_data)
 
-    master_video = root_dir / "data" / "final" / "appin_master_9x16.mp4"
+    master_video = root_dir / "data" / "final" / "project_origin_ep01_master_9x16.mp4"
     assert master_video.exists(), f"Master video not found: {master_video}"
 
     # 1. Test Social Metadata Generator

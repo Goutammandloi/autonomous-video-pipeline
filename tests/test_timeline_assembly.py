@@ -26,27 +26,27 @@ from src.assembly import (
 def run_test():
     print("=== Testing Feature 5: Timeline Assembly, Kinetic Subtitles & Video Master QA ===")
 
-    deck_path = root_dir / "data" / "shot_decks" / "appin_career_ka_asli_netflix_shot_deck.json"
+    deck_path = root_dir / "data" / "shot_decks" / "project_origin_ep01_shot_deck.json"
     assert deck_path.exists(), f"Shot deck file not found: {deck_path}"
 
     with open(deck_path, "r", encoding="utf-8") as f:
         deck_data = json.load(f)
     shot_deck = ProductionShotDeck.model_validate(deck_data)
 
-    video_clips_dir = root_dir / "data" / "video_clips"
+    video_clips_dir = root_dir / "data" / "video_clips" / "ep01"
     clip_paths = [
         str(video_clips_dir / f"shot_{i}_clip.mp4")
-        for i in range(1, 6)
+        for i in range(1, 14)
     ]
     for p in clip_paths:
         assert Path(p).exists(), f"Video clip missing: {p}"
 
-    master_audio_path = root_dir / "data" / "audio" / "master_soundtrack.wav"
+    master_audio_path = root_dir / "data" / "audio" / "project_origin_ep01_soundtrack.wav"
     assert master_audio_path.exists(), f"Master audio missing: {master_audio_path}"
 
     final_dir = root_dir / "data" / "final"
     final_dir.mkdir(parents=True, exist_ok=True)
-    output_video_path = str(final_dir / "appin_master_9x16.mp4")
+    output_video_path = str(final_dir / "project_origin_ep01_master_9x16.mp4")
 
     # 1. Build Subtitle Segments
     audio_dir = root_dir / "data" / "audio"
