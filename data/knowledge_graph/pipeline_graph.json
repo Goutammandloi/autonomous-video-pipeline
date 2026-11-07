@@ -1,6 +1,139 @@
 {
   "nodes": [
     {
+      "id": "mod_evaluator",
+      "label": "evaluator.py",
+      "type": "CodeModule",
+      "path": "src/visuals/evaluator.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_AssemblyQAEvaluator",
+      "label": "AssemblyQAEvaluator",
+      "type": "ClassSchema",
+      "source": "mod_evaluator",
+      "group": "schema"
+    },
+    {
+      "id": "fn_evaluator_evaluate_master_video",
+      "label": "evaluate_master_video()",
+      "type": "Function",
+      "source": "mod_evaluator",
+      "group": "code"
+    },
+    {
+      "id": "fn_evaluator__probe_audio_stream",
+      "label": "_probe_audio_stream()",
+      "type": "Function",
+      "source": "mod_evaluator",
+      "group": "code"
+    },
+    {
+      "id": "mod_schemas",
+      "label": "schemas.py",
+      "type": "CodeModule",
+      "path": "src/visuals/schemas.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_ActiveWordHighlight",
+      "label": "ActiveWordHighlight",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_SubtitleSegment",
+      "label": "SubtitleSegment",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_SubtitleStyleConfig",
+      "label": "SubtitleStyleConfig",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_AssemblyConfig",
+      "label": "AssemblyConfig",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_MasterVideoReport",
+      "label": "MasterVideoReport",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "mod_subtitle_burner",
+      "label": "subtitle_burner.py",
+      "type": "CodeModule",
+      "path": "src/assembly/subtitle_burner.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_SubtitleBurner",
+      "label": "SubtitleBurner",
+      "type": "ClassSchema",
+      "source": "mod_subtitle_burner",
+      "group": "schema"
+    },
+    {
+      "id": "fn_subtitle_burner__load_font",
+      "label": "_load_font()",
+      "type": "Function",
+      "source": "mod_subtitle_burner",
+      "group": "code"
+    },
+    {
+      "id": "fn_subtitle_burner_segments_from_shot_deck_and_tracks",
+      "label": "segments_from_shot_deck_and_tracks()",
+      "type": "Function",
+      "source": "mod_subtitle_burner",
+      "group": "code"
+    },
+    {
+      "id": "fn_subtitle_burner_burn_frame",
+      "label": "burn_frame()",
+      "type": "Function",
+      "source": "mod_subtitle_burner",
+      "group": "code"
+    },
+    {
+      "id": "mod_timeline_assembler",
+      "label": "timeline_assembler.py",
+      "type": "CodeModule",
+      "path": "src/assembly/timeline_assembler.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_TimelineAssembler",
+      "label": "TimelineAssembler",
+      "type": "ClassSchema",
+      "source": "mod_timeline_assembler",
+      "group": "schema"
+    },
+    {
+      "id": "fn_timeline_assembler_assemble_master_video",
+      "label": "assemble_master_video()",
+      "type": "Function",
+      "source": "mod_timeline_assembler",
+      "group": "code"
+    },
+    {
+      "id": "mod___init__",
+      "label": "__init__.py",
+      "type": "CodeModule",
+      "path": "src/visuals/__init__.py",
+      "group": "code"
+    },
+    {
       "id": "mod_mixer",
       "label": "mixer.py",
       "type": "CodeModule",
@@ -54,13 +187,6 @@
       "label": "_write_float_as_wav()",
       "type": "Function",
       "source": "mod_mixer",
-      "group": "code"
-    },
-    {
-      "id": "mod_schemas",
-      "label": "schemas.py",
-      "type": "CodeModule",
-      "path": "src/visuals/schemas.py",
       "group": "code"
     },
     {
@@ -180,13 +306,6 @@
       "label": "_get_wav_duration()",
       "type": "Function",
       "source": "mod_tts_engine",
-      "group": "code"
-    },
-    {
-      "id": "mod___init__",
-      "label": "__init__.py",
-      "type": "CodeModule",
-      "path": "src/visuals/__init__.py",
       "group": "code"
     },
     {
@@ -419,13 +538,6 @@
       "type": "ClassSchema",
       "source": "mod_schemas",
       "group": "schema"
-    },
-    {
-      "id": "mod_evaluator",
-      "label": "evaluator.py",
-      "type": "CodeModule",
-      "path": "src/visuals/evaluator.py",
-      "group": "code"
     },
     {
       "id": "cls_VisualQAEvaluator",
@@ -801,39 +913,59 @@
   ],
   "edges": [
     {
-      "from": "mod_mixer",
-      "to": "cls_AcousticMixer",
+      "from": "mod_evaluator",
+      "to": "cls_AssemblyQAEvaluator",
       "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer_mix_soundtrack",
+      "from": "mod_evaluator",
+      "to": "fn_evaluator_evaluate_master_video",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer__generate_ambient_bgm",
+      "from": "mod_evaluator",
+      "to": "fn_evaluator__probe_audio_stream",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer__smooth_envelope",
+      "from": "mod_evaluator",
+      "to": "cls_VisualQAEvaluator",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_evaluator",
+      "to": "fn_evaluator_evaluate_keyframe",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer__master_to_lufs",
+      "from": "mod_evaluator",
+      "to": "fn_evaluator__audit_with_gemini_vision",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer__read_wav_as_float",
-      "relationship": "DEFINES_FUNC"
+      "from": "mod_schemas",
+      "to": "cls_ActiveWordHighlight",
+      "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_mixer",
-      "to": "fn_mixer__write_float_as_wav",
-      "relationship": "DEFINES_FUNC"
+      "from": "mod_schemas",
+      "to": "cls_SubtitleSegment",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_SubtitleStyleConfig",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_AssemblyConfig",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_MasterVideoReport",
+      "relationship": "DEFINES_CLASS"
     },
     {
       "from": "mod_schemas",
@@ -929,6 +1061,71 @@
       "from": "mod_schemas",
       "to": "cls_KeyframeAsset",
       "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_subtitle_burner",
+      "to": "cls_SubtitleBurner",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_subtitle_burner",
+      "to": "fn_subtitle_burner__load_font",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_subtitle_burner",
+      "to": "fn_subtitle_burner_segments_from_shot_deck_and_tracks",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_subtitle_burner",
+      "to": "fn_subtitle_burner_burn_frame",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_timeline_assembler",
+      "to": "cls_TimelineAssembler",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_timeline_assembler",
+      "to": "fn_timeline_assembler_assemble_master_video",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "cls_AcousticMixer",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer_mix_soundtrack",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__generate_ambient_bgm",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__smooth_envelope",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__master_to_lufs",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__read_wav_as_float",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__write_float_as_wav",
+      "relationship": "DEFINES_FUNC"
     },
     {
       "from": "mod_subtitles",
@@ -1088,21 +1285,6 @@
     {
       "from": "mod_generator",
       "to": "fn_generator__render_cinematic_keyframe",
-      "relationship": "DEFINES_FUNC"
-    },
-    {
-      "from": "mod_evaluator",
-      "to": "cls_VisualQAEvaluator",
-      "relationship": "DEFINES_CLASS"
-    },
-    {
-      "from": "mod_evaluator",
-      "to": "fn_evaluator_evaluate_keyframe",
-      "relationship": "DEFINES_FUNC"
-    },
-    {
-      "from": "mod_evaluator",
-      "to": "fn_evaluator__audit_with_gemini_vision",
       "relationship": "DEFINES_FUNC"
     },
     {
@@ -1292,8 +1474,8 @@
     }
   ],
   "metrics": {
-    "node_count": 118,
-    "edge_count": 98,
-    "density": 0.007098363030566421
+    "node_count": 134,
+    "edge_count": 112,
+    "density": 0.006284367635506678
   }
 }

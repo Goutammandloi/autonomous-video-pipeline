@@ -10,6 +10,7 @@
       --border: #1f2937;
       --accent: #38bdf8;
       --accent-green: #10b981;
+      --accent-gold: #f59e0b;
       --text: #f9fafb;
       --muted: #9ca3af;
     }
@@ -20,16 +21,25 @@
     h1 { font-size: 1.6rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
     .badge { background: #0369a1; color: #e0f2fe; padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; }
     
-    .telemetry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 30px; }
+    .telemetry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 30px; }
     .telemetry-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
     .telemetry-card h3 { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
     .telemetry-card .value { font-size: 1.8rem; font-weight: bold; color: var(--accent-green); }
     .telemetry-card .subtext { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
 
-    .master-player-section { background: #1e1b4b; border: 1px solid #4338ca; border-radius: 12px; padding: 20px; margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .master-info h2 { font-size: 1.2rem; color: #c7d2fe; margin-bottom: 4px; }
-    .master-info p { font-size: 0.85rem; color: #a5b4fc; }
-    .master-audio-ctrl { flex: 1; min-width: 300px; }
+    .master-hero { display: flex; gap: 28px; background: #0f172a; border: 1px solid #3b82f6; border-radius: 16px; padding: 24px; margin-bottom: 32px; flex-wrap: wrap; align-items: center; }
+    .master-video-pane { flex: 0 0 320px; max-width: 320px; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5); border: 2px solid #38bdf8; background: #000; }
+    .master-video-pane video { width: 100%; aspect-ratio: 9/16; display: block; object-fit: cover; }
+    .master-hero-content { flex: 1; min-width: 320px; }
+    .master-hero-content h2 { font-size: 1.4rem; color: #e0f2fe; margin-bottom: 8px; }
+    .master-hero-content p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 16px; }
+    .master-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .master-badge-pill { background: #1e293b; border: 1px solid #334155; padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; color: #38bdf8; }
+
+    .master-player-section { background: #1e1b4b; border: 1px solid #4338ca; border-radius: 12px; padding: 18px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .master-info h3 { font-size: 1.05rem; color: #c7d2fe; margin-bottom: 4px; }
+    .master-info p { font-size: 0.8rem; color: #a5b4fc; }
+    .master-audio-ctrl { flex: 1; min-width: 260px; }
     .master-audio-ctrl audio { width: 100%; }
 
     .storyboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
@@ -40,7 +50,7 @@
     .duration-badge { background: #0284c7; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 6px; }
     
     .image-wrapper { position: relative; width: 100%; padding-top: 177.77%; /* 9:16 aspect ratio */ background: #0f172a; overflow: hidden; }
-    .image-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .image-wrapper img, .image-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
     .camera-pill { position: absolute; bottom: 8px; left: 8px; right: 8px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); font-size: 0.7rem; color: #38bdf8; padding: 4px 8px; border-radius: 6px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.3); }
 
     .dialogue-box { padding: 12px 14px; flex-grow: 1; border-top: 1px solid var(--border); background: #0c121e; }
@@ -70,7 +80,12 @@
     <!-- TELEMETRY SUMMARY -->
     <div class="telemetry-grid">
       <div class="telemetry-card">
-        <h3>Script QA Gate</h3>
+        <h3>Master Video QA</h3>
+        <div class="value">10.0/10</div>
+        <div class="subtext">A/V Sync: 0.0ms • 555 Frames • 30 CFR</div>
+      </div>
+      <div class="telemetry-card">
+        <h3>Script Hook QA</h3>
         <div class="value">9.04/10</div>
         <div class="subtext">Hook Score: 9.0/10 (3s Retention Passed)</div>
       </div>
@@ -82,28 +97,46 @@
       <div class="telemetry-card">
         <h3>Acoustic Integrated Loudness</h3>
         <div class="value">-14.0 LUFS</div>
-        <div class="subtext">ITU-R BS.1770 Target: -14.0 LUFS ±1dB (Passed)</div>
+        <div class="subtext">ITU-R BS.1770 Target: -14.0 LUFS (-1.0 dBTP)</div>
       </div>
       <div class="telemetry-card">
-        <h3>Sidechain Ducking Depth</h3>
+        <h3>Sidechain Ducking</h3>
         <div class="value">-12.0 dB</div>
-        <div class="subtext">BGM Drops During Speech (Target &ge; 10dB)</div>
+        <div class="subtext">Automated BGM Drop during Voice</div>
       </div>
     </div>
 
-    <!-- MASTER COMPOSITE AUDIO PLAYER -->
-    <div class="master-player-section">
-      <div class="master-info">
-        <h2>🎵 Master Soundtrack with Automated -12dB Ducking</h2>
-        <p>Continuous dynamic BGM mixed with individual character stems • True Peak: -1.0 dBTP</p>
+    <!-- MASTER 9:16 VIDEO HERO -->
+    <div class="master-hero">
+      <div class="master-video-pane">
+        <video controls poster="../keyframes/shot_1_keyframe.png" src="../final/appin_master_9x16.mp4" preload="auto"></video>
       </div>
-      <div class="master-audio-ctrl">
-        <audio controls src="../audio/master_soundtrack.wav"></audio>
+      <div class="master-hero-content">
+        <h2>🔥 Assembled Master Video (9:16 Vertical)</h2>
+        <p>Full 18.5s production master featuring continuous ITU-R BS.1770 mastered audio, word-synchronized kinetic highlighted subtitles, dynamic camera motions, and cyber security terminal perspective screen replacement.</p>
+        <div class="master-badges">
+          <div class="master-badge-pill">Resolution: 1080x1920</div>
+          <div class="master-badge-pill">Codec: H.264 / AAC</div>
+          <div class="master-badge-pill">Framerate: 30.00 FPS CFR</div>
+          <div class="master-badge-pill">Size: 2.51 MB</div>
+          <div class="master-badge-pill">A/V Sync: 0.00 ms</div>
+          <div class="master-badge-pill">Subtitles: Burned Kinetic</div>
+        </div>
+
+        <div class="master-player-section">
+          <div class="master-info">
+            <h3>🎵 Isolated Master Audio Track (-12dB Sidechain Ducking)</h3>
+            <p>Continuous dynamic BGM mixed with individual character stems</p>
+          </div>
+          <div class="master-audio-ctrl">
+            <audio controls src="../audio/master_soundtrack.wav"></audio>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- 9:16 KEYFRAME STORYBOARD -->
-    <h2 style="font-size: 1.25rem; margin-bottom: 16px; color: #bae6fd;">🎞️ 9:16 Vertical Keyframe Production Storyboard</h2>
+    <h2 style="font-size: 1.25rem; margin-bottom: 16px; color: #bae6fd;">🎞️ 9:16 Individual Motion Shots & Stem Assets</h2>
     <div class="storyboard-grid">
       
             <div class="shot-card" id="shot-1">
@@ -112,7 +145,7 @@
                 <span class="duration-badge">3.0s</span>
               </div>
               <div class="image-wrapper">
-                <img src="../keyframes/shot_1_keyframe.png" alt="Shot 1 9:16 Keyframe" />
+                <video controls poster="../keyframes/shot_1_keyframe.png" src="../video_clips/shot_1_clip.mp4" preload="metadata"></video>
                 <div class="camera-pill">medium_two_shot • slow_push_in</div>
               </div>
               <div class="dialogue-box">
@@ -120,7 +153,7 @@
                 <div class="dialogue-text">"Rajat! Phir se Netflix? Placement season chal raha hai!"</div>
               </div>
               <audio controls class="stem-player" src="../audio/shot_1_didi.wav"></audio>
-              <div class="qa-badge">Visual QA: 9.06/10 • Passed</div>
+              <div class="qa-badge">Motion Flow Z: 2.54 • QA_PASSED</div>
             </div>
             
             <div class="shot-card" id="shot-2">
@@ -129,7 +162,7 @@
                 <span class="duration-badge">3.5s</span>
               </div>
               <div class="image-wrapper">
-                <img src="../keyframes/shot_2_keyframe.png" alt="Shot 2 9:16 Keyframe" />
+                <video controls poster="../keyframes/shot_2_keyframe.png" src="../video_clips/shot_2_clip.mp4" preload="metadata"></video>
                 <div class="camera-pill">over_the_shoulder • handheld_organic</div>
               </div>
               <div class="dialogue-box">
@@ -137,16 +170,16 @@
                 <div class="dialogue-text">"Arey tension kyun le rahi ho Didi, chill karo na!"</div>
               </div>
               <audio controls class="stem-player" src="../audio/shot_2_rajat.wav"></audio>
-              <div class="qa-badge">Visual QA: 9.06/10 • Passed</div>
+              <div class="qa-badge">Motion Flow Z: 2.73 • QA_PASSED</div>
             </div>
             
             <div class="shot-card" id="shot-3">
               <div class="card-header">
-                <span class="shot-tag">Shot 3 [The Twist / Screen Reveal]</span>
+                <span class="shot-tag">Shot 3 [The Twist / Screen Reveal]<span style="background:#059669;color:#fff;padding:2px 6px;border-radius:4px;font-size:0.7rem;margin-left:6px;">Screen Inset</span></span>
                 <span class="duration-badge">4.0s</span>
               </div>
               <div class="image-wrapper">
-                <img src="../keyframes/shot_3_keyframe.png" alt="Shot 3 9:16 Keyframe" />
+                <video controls poster="../keyframes/shot_3_keyframe.png" src="../video_clips/shot_3_clip.mp4" preload="metadata"></video>
                 <div class="camera-pill">first_person_pov • tracking_follow</div>
               </div>
               <div class="dialogue-box">
@@ -154,7 +187,7 @@
                 <div class="dialogue-text">"Netflix nahi, Appin Technology ka live cyber lab chal raha hai!"</div>
               </div>
               <audio controls class="stem-player" src="../audio/shot_3_rajat.wav"></audio>
-              <div class="qa-badge">Visual QA: 9.06/10 • Passed</div>
+              <div class="qa-badge">Motion Flow Z: 2.56 • QA_PASSED</div>
             </div>
             
             <div class="shot-card" id="shot-4">
@@ -163,7 +196,7 @@
                 <span class="duration-badge">4.0s</span>
               </div>
               <div class="image-wrapper">
-                <img src="../keyframes/shot_4_keyframe.png" alt="Shot 4 9:16 Keyframe" />
+                <video controls poster="../keyframes/shot_4_keyframe.png" src="../video_clips/shot_4_clip.mp4" preload="metadata"></video>
                 <div class="camera-pill">close_up • slow_push_in</div>
               </div>
               <div class="dialogue-box">
@@ -171,7 +204,7 @@
                 <div class="dialogue-text">"Wait... practical training aur 100% placement support?"</div>
               </div>
               <audio controls class="stem-player" src="../audio/shot_4_didi.wav"></audio>
-              <div class="qa-badge">Visual QA: 9.06/10 • Passed</div>
+              <div class="qa-badge">Motion Flow Z: 2.3 • QA_PASSED</div>
             </div>
             
             <div class="shot-card" id="shot-5">
@@ -180,7 +213,7 @@
                 <span class="duration-badge">4.0s</span>
               </div>
               <div class="image-wrapper">
-                <img src="../keyframes/shot_5_keyframe.png" alt="Shot 5 9:16 Keyframe" />
+                <video controls poster="../keyframes/shot_5_keyframe.png" src="../video_clips/shot_5_clip.mp4" preload="metadata"></video>
                 <div class="camera-pill">medium_close_up • static</div>
               </div>
               <div class="dialogue-box">
@@ -188,13 +221,13 @@
                 <div class="dialogue-text">"Toh career mein upgrade chahiye? Abhi bio ke link se free demo book karo!"</div>
               </div>
               <audio controls class="stem-player" src="../audio/shot_5_rajat.wav"></audio>
-              <div class="qa-badge">Visual QA: 9.06/10 • Passed</div>
+              <div class="qa-badge">Motion Flow Z: 0.0 • QA_PASSED</div>
             </div>
             
     </div>
 
     <div class="footer-links">
-      <p>Autonomous AI Video Studio Engine • Branch: <code>dev</code> • Commit: <code>Goutammandloi/autonomous-video-pipeline</code></p>
+      <p>Autonomous AI Video Studio Engine • Branch: <code>dev</code> • Repository: <code>Goutammandloi/autonomous-video-pipeline</code></p>
     </div>
   </div>
 </body>

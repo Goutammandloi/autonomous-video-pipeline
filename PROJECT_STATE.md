@@ -28,8 +28,8 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
 | **Stage 2: Visual Bible & Keyframe Generator** | Automated prompt builder, character/environment consistency locking, reference image chaining | 🟢 Completed | Asset Generator + Multimodal Evaluator |
 | **Stage 3: Voiceover & Lip-Sync Synthesis** | Google Cloud TTS / Edge-TTS audio gen + audio alignment + lip-sync model integration | 🟢 Completed | Audio Synthesis Unit |
 | **Stage 4: I2V Motion Generation & Asset Inset** | Image-to-Video generation (Veo / Runway / Kling / open-source) + screen replacement compositing | 🟢 Completed | Motion Engine |
-| **Stage 5: Autonomous Assembly & QA Monitor** | FFmpeg/Remotion programmatic timeline assembly, caption burning, automated glitch & sync evaluator | 🟡 In Progress | Video Assembly & QA Agent |
-| **Stage 6: Dispatch & Social Media Scheduler** | YouTube Shorts API, Instagram Graph API, scheduling queue, webhook triggers | ⚪ Queued | Social Dispatcher |
+| **Stage 5: Autonomous Assembly & QA Monitor** | FFmpeg/Remotion programmatic timeline assembly, caption burning, automated glitch & sync evaluator | 🟢 Completed | Video Assembly & QA Agent |
+| **Stage 6: Dispatch & Social Media Scheduler** | YouTube Shorts API, Instagram Graph API, scheduling queue, webhook triggers | 🟡 In Progress | Social Dispatcher |
 
 ---
 
@@ -89,6 +89,15 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
 - Implemented `src/motion/glitch_detector.py`: Gunnar Farneback dense optical flow evaluation (`cv2.calcOpticalFlowFarneback`) with statistical motion anomaly detection ($Z_t > 3.5$ or velocity jump ratio $> 2.5\times$).
 - Implemented `src/motion/motion_engine.py`: CFR 30.0 fps $1080 \times 1920$ motion engine supporting Veo 2 / local synthesis with automated self-healing remediation (automatic velocity damping by $0.65\times$ when optical flow spikes occur).
 - Verified test suite: `tests/test_motion_and_compositor.py` generated and validated all 5 MP4 motion clips in `data/video_clips/` (Shot 3 featuring perspective terminal screen inset).
+
+### [2026-11-07] Feature 5: Timeline Assembly, Kinetic Subtitles & Final Master QA (Stage 5 Complete)
+- Implemented `src/assembly/schemas.py`: Pydantic data models for `SubtitleStyleConfig`, `SubtitleSegment`, `ActiveWordHighlight`, `AssemblyConfig`, and `MasterVideoReport`.
+- Implemented `src/assembly/subtitle_burner.py`: High-retention kinetic subtitle rendering engine utilizing Pillow and anti-aliased TrueType bold typography. Renders active-spoken-word dynamic highlighting (vibrant gold/yellow `(255, 220, 0)` on active word, pure white `(255, 255, 255)` for surrounding words), deep stroke outline (`#0A0A0A`), speaker tag pill (`• DIDI`, `• RAJAT`), and translucent rounded background container.
+- Implemented `src/assembly/timeline_assembler.py`: Programmatic FFmpeg video assembly engine piping raw frames (`-pix_fmt bgr24`) directly into FFmpeg stdin with zero intermediate disk bloat, multiplexing ITU-R BS.1770 mastered audio (`master_soundtrack.wav`), faststart container flags, and high-compatibility `yuv420p` H.264/AAC output (`data/final/appin_master_9x16.mp4`).
+- Implemented `src/assembly/evaluator.py`: Multi-vector video gatekeeper auditing aspect ratio (9:16 vertical $1080 \times 1920$), CFR 30.00 FPS, audio codec (AAC stereo 48kHz), A/V synchronization delta ($|\Delta t| \le 33\text{ ms}$), and lower-third subtitle legibility.
+- Verified test suite: `tests/test_timeline_assembly.py` validated master video (`data/final/appin_master_9x16.mp4`), scoring **10.0 / 10.0** on QA with exact **$0.00\text{ ms}$ A/V sync drift**.
+- Updated unified runner & UI preview: `run_studio.py` and `data/preview/index.html` updated with the responsive 9:16 hero master player and live telemetry cards.
+
 
 
 
