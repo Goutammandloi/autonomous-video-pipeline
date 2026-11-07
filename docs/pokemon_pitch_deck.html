@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pokémon: Beyond the Monarch - Series Architecture & Pitch Deck</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 14mm 14mm 14mm;
+  }
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  body {
+    background: #0b1120;
+    color: #e2e8f0;
+    line-height: 1.5;
+    font-size: 13px;
+    padding: 0;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* COVER HEADER */
+  .cover-card {
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #1e293b 100%);
+    border: 2px solid #3b82f6;
+    border-radius: 12px;
+    padding: 32px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+  .confidential-tag {
+    display: inline-block;
+    background: #ef4444;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #60a5fa;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 14px;
+  }
+  .meta-item h4 {
+    font-size: 10px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .meta-item p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  /* SECTION STYLING */
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #38bdf8;
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
+    margin: 20px 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section-desc {
+    color: #94a3b8;
+    font-size: 12.5px;
+    margin-bottom: 14px;
+  }
+
+  /* CHARACTER TABLE */
+  .card-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .char-card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .char-card.ash {
+    border-top: 3px solid #f59e0b;
+  }
+  .char-card.red {
+    border-top: 3px solid #ef4444;
+  }
+  .char-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .char-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #f8fafc;
+  }
+  .char-role {
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .ash-pill { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+  .red-pill { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+  .trait-list {
+    list-style: none;
+    font-size: 11.5px;
+  }
+  .trait-list li {
+    margin-bottom: 4px;
+    color: #cbd5e1;
+  }
+  .trait-list li strong {
+    color: #e2e8f0;
+  }
+
+  /* CONCEPT CARDS */
+  .concept-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .concept-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .concept-num {
+    background: #2563eb;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .concept-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #f1f5f9;
+  }
+  .concept-tag {
+    font-size: 10px;
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: #38bdf8;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .logline {
+    font-style: italic;
+    color: #93c5fd;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    background: rgba(30, 58, 138, 0.25);
+    border-left: 3px solid #3b82f6;
+    border-radius: 0 6px 6px 0;
+  }
+  .concept-body {
+    font-size: 11.5px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    line-height: 1.45;
+  }
+  .episode-timeline {
+    background: #090e17;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 10px;
+  }
+  .episode-timeline h5 {
+    font-size: 10.5px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .ep-list {
+    list-style: none;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+  .ep-list li {
+    margin-bottom: 3px;
+  }
+  .ep-list li strong {
+    color: #e2e8f0;
+  }
+
+  /* COMPARISON TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+  th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border: 1px solid #1e293b;
+  }
+  th {
+    background: #1e293b;
+    color: #38bdf8;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
+    background: rgba(30, 41, 59, 0.4);
+  }
+  .score-cell {
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  /* FOOTER CALLOUT */
+  .footer-callout {
+    background: #1e1b4b;
+    border: 1px solid #4338ca;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 12px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-callout p strong {
+    color: #a5b4fc;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER CARD -->
+  <div class="cover-card">
+    <span class="confidential-tag">Executive Pitch Deck • Internal Review</span>
+    <h1>POKÉMON: BEYOND THE MONARCH</h1>
+    <p class="subtitle">An Episodic Continuous Serial Universe Uniting World Monarch Ash Ketchum and Legend Red</p>
+    
+    <div class="meta-grid">
+      <div class="meta-item">
+        <h4>Canon Anchor</h4>
+        <p>Post-Ultimate Journeys</p>
+      </div>
+      <div class="meta-item">
+        <h4>Target Audience</h4>
+        <p>Gen Z / Millennials / Shonen Fans</p>
+      </div>
+      <div class="meta-item">
+        <h4>Core Duo</h4>
+        <p>Ash Ketchum &amp; Red</p>
+      </div>
+      <div class="meta-item">
+        <h4>Format</h4>
+        <p>Continuous Serial (Multi-Season)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: EXECUTIVE PREMISE -->
+  <div class="section-title">1. The Strategic Opportunity &amp; Narrative Vacuum</div>
+  <p class="section-desc">
+    When Ash Ketchum defeated Leon in the Masters Eight Tournament (Episode 132 of <em>Ultimate Journeys</em>), his 25-year tournament quest officially concluded. He earned the pinnacle sports title: <strong>World Monarch</strong>. However, this created the greatest unanswered question in franchise history: <em>"What lies beyond the sports arena? What does it truly mean to be a Pokémon Master in a world fraught with ancient deities and corporate exploitation?"</em>
+    By uniting the anime’s emotional World Monarch (Ash) with the gaming/Origins mythic benchmark (Red), we unlock an untapped, high-engagement narrative engine built for endless serialized storytelling.
+  </p>
+
+  <!-- SECTION 2: THE TITANS SYNERGY MATRIX -->
+  <div class="section-title">2. Character Dynamics &amp; Tactical Synergy Matrix</div>
+  <div class="card-grid-2">
+    <!-- ASH -->
+    <div class="char-card ash">
+      <div class="char-header">
+        <span class="char-name">Ash Ketchum (16)</span>
+        <span class="char-role ash-pill">The Reigning Monarch</span>
+      </div>
+      <ul class="trait-list">
+        <li><strong>Philosophy:</strong> Unconditional empathy, bond-driven improvisation, breaking tactical rules.</li>
+        <li><strong>Gimmick Mastery:</strong> Mega Evolution (Lucario), Z-Moves (10,000,000 Volt Thunderbolt), Gigantamax (G-Max Gengar), Bond Phenomenon (Battle Greninja).</li>
+        <li><strong>Role in Duo:</strong> The Heart &amp; Wild Card. Able to sense Pokémon intentions through Aura and win unwinnable emotional battles.</li>
+        <li><strong>Signature Partner:</strong> Pikachu (Cap/Partner variant with unmatched speed and Volt Tackle / Thunderbolt power).</li>
+      </ul>
+    </div>
+
+    <!-- RED -->
+    <div class="char-card red">
+      <div class="char-header">
+        <span class="char-name">Red (19)</span>
+        <span class="char-role red-pill">The Mt. Silver Legend</span>
+      </div>
+      <ul class="trait-list">
+        <li><strong>Philosophy:</strong> Stoic minimalism, perfect EV/IV tactical execution, zero wasted movement.</li>
+        <li><strong>Combat Style:</strong> Millisecond hand signals; does not shout commands. Master of terrain manipulation and raw Level 100 power.</li>
+        <li><strong>Role in Duo:</strong> The General &amp; Tactician. Battle-scarred veteran who prepares for extinction-level contingencies.</li>
+        <li><strong>Signature Partner:</strong> Charizard (Mega Charizard X / Primal Fire specialist with Blast Burn and Dragon Claw).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 3: THE 3 TRENDING STORY CONCEPTS -->
+  <div class="section-title">3. The Three Trending Pitch Concepts</div>
+
+  <!-- CONCEPT 1 -->
+  <div class="concept-box">
+    <div class="concept-header">
+      <div>
+        <span class="concept-num">CONCEPT 01</span>
+        <span class="concept-title">PROJECT ORIGIN: THE SHATTERED CROWN</span>
+      </div>
+      <span class="concept-tag">Corporate Syndicate • Sci-Fi Thriller</span>
+    </div>
+    <div class="logline">
+      "After being crowned World Monarch, Ash uncovers that the Pokémon League is a gilded cage run by the Silph-Macro Consortium—an elite cartel bio-engineering artificial de-evolution chips to weaponize Legendaries. Teaming up with the exiled legend Red, they declare war on the corporate underworld."
+    </div>
+    <div class="concept-body">
+      <strong>Core Conflict:</strong> Modern commercial exploitation vs. genuine human-Pokémon companionship. Ash refuses an exclusive corporate contract and is targeted by black-ops capture teams. Red, who uncovered this conspiracy years prior and staged his exile to Mt. Silver to prepare, rescues Ash. Together, they infiltrate deep subterranean cloning facilities where corrupted bio-Mew and synthetic shadow beasts are kept.
+    </div>
+    <div class="episode-timeline">
+      <h5>Season 1 Serial Arc Blueprint (Episodes 1–5):</h5>
+      <ul class="ep-list">
+        <li><strong>Ep 1: The Gilded Throne</strong> — Ash is pressured to sign an endorsement contract mandating obedience chips; Pikachu rejects it. Ash is ambushed in Cerulean Cape.</li>
+        <li><strong>Ep 2: The Red Phantom</strong> — Outnumbered by mechanized capture drones, Red’s Charizard descends from the storm. Red breaks Ash out and brings him to the Hidden Sanctum.</li>
+        <li><strong>Ep 3: The Secret Vault of Silph</strong> — Ash and Red infiltrate the Saffron sub-levels, uncovering a captured, restrained Mewtwo being drained of psionic energy.</li>
+        <li><strong>Ep 4: Split Command</strong> — Red wants to neutralize the facility with destructive force; Ash insists on saving every trapped specimen. A chaotic dual battle against corporate Enforcers.</li>
+        <li><strong>Ep 5: The Chimera Awaken</strong> — Mid-season climax: The Consortium unleashes "Apex-0", an engineered chimera harboring genes of all three Kanto legendary birds.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONCEPT 2 -->
+  <div class="concept-box">
+    <div class="concept-header">
+      <div>
+        <span class="concept-num">CONCEPT 02</span>
+        <span class="concept-title">THE PARADOX FRACTURES: FALL OF MT. SILVER</span>
+      </div>
+      <span class="concept-tag">Multiverse Rupture • Dark Shonen Survival</span>
+    </div>
+    <div class="logline">
+      "When the Great Crater of Paldea (Area Zero) collides with the Distortion World, Mt. Silver is ripped into a temporal fault-line. Ancient savage predators and terrifying cyber-mechanized Paradox deities flood Kanto and Johto, forcing Ash and Red to unite two fractured timelines."
+    </div>
+    <div class="concept-body">
+      <strong>Core Conflict:</strong> Time-space breakdown and primal survival. Paradox beasts cannot be captured by standard Pokéballs and do not obey modern battle etiquette. Ash must learn ruthless battlefield positioning from Red, while Red learns to trust Ash's ability to communicate with confused ancient beings to close the temporal rifts.
+    </div>
+    <div class="episode-timeline">
+      <h5>Season 1 Serial Arc Blueprint (Episodes 1–5):</h5>
+      <ul class="ep-list">
+        <li><strong>Ep 1: The Sky Over Johto Bleeds</strong> — Temporal auroras tear across the sky. Mt. Silver disappears inside a violet vortex.</li>
+        <li><strong>Ep 2: Ground Zero</strong> — Ash travels to the base of Mt. Silver to investigate, where he encounters an Iron Thorns and Roaring Moon attacking a fleeing research camp.</li>
+        <li><strong>Ep 3: Meeting the Ghost</strong> — Red steps out from the eye of the vortex; his team has been fighting non-stop for weeks. Pikachu meets Pikachu.</li>
+        <li><strong>Ep 4: The Ancient Roar</strong> — A gargantuan prehistoric Paradox Raikou (Raging Bolt) threatens Goldenrod City. Ash and Red coordinate an intricate dual-flanking strategy.</li>
+        <li><strong>Ep 5: The Time Architect</strong> — The duo discovers that the fractures are not natural: an entity from the future is intentionally destabilizing the timeline.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+  <div class="page-break"></div>
+
+  <!-- CONCEPT 3 -->
+  <div class="concept-box">
+    <div class="concept-header">
+      <div>
+        <span class="concept-num">CONCEPT 03</span>
+        <span class="concept-title">THE MYTHIC SENTINELS: ORDER OF THE SILVER CREST</span>
+      </div>
+      <span class="concept-tag">Secret Guild • High-Tier Mythic Exploration</span>
+    </div>
+    <div class="logline">
+      "The World Coronation Series was only the public exhibition tournament. Above the regional Champions exists a classified shadow hierarchy—The Order of the Silver Crest. Red, their youngest Grandmaster, recruits World Monarch Ash to protect Earth from cosmic anomalies and rogue primal deities in uncharted wild zones."
+    </div>
+    <div class="concept-body">
+      <strong>Core Conflict:</strong> Human limitation vs. cosmic-scale mythological forces (Deoxys swarms, Ultra Beasts, primal awakenings in the outer stratosphere and deep abyss). This framework allows endless serialized missions, new undiscovered landmasses, and battles that test the absolute limit of Pokémon combat beyond Lv. 100.
+    </div>
+    <div class="episode-timeline">
+      <h5>Season 1 Serial Arc Blueprint (Episodes 1–5):</h5>
+      <ul class="ep-list">
+        <li><strong>Ep 1: The Black Pokéball</strong> — The morning after his coronation, an unmarked jet-black obsidian Pokéball with a cryptographic holocron is delivered to Ash's bedside.</li>
+        <li><strong>Ep 2: The Trial of the Void</strong> — Ash is summoned to the desolate Far Isles. To prove his fitness for the Order, he must survive a non-stop gauntlet against Red.</li>
+        <li><strong>Ep 3: Deep Sea Trench Zero</strong> — The first deployment: An Ultra Wormhole opens in the Mariana Trench, spilling hostile Ultra Beasts into the marine ecosystem.</li>
+        <li><strong>Ep 4: Dual Synchrony</strong> — Ash's Battle Greninja and Red's Blastoise execute an unprecedented hydro-vortex combo to seal the abyssal trench breach.</li>
+        <li><strong>Ep 5: The Herald of the Stars</strong> — A rogue celestial anomaly (Deoxys-Delta variant) enters Earth's orbit, heading directly toward the Kanto mainland.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 4: COMPARATIVE ANALYSIS -->
+  <div class="section-title">4. Strategic Decision Matrix for Team Evaluation</div>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Concept Name</th>
+        <th>Genre &amp; Mood</th>
+        <th>Key Strengths</th>
+        <th>Viral Hook Factor</th>
+        <th>Serial Longevity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>01. Project Origin</strong></td>
+        <td>Corporate Cyberpunk Thriller</td>
+        <td>Grounds the world in high-stakes human corruption; underground gym raids; relatable corporate critique.</td>
+        <td class="score-cell">9.5 / 10</td>
+        <td>High (Infinite syndicates &amp; black markets)</td>
+      </tr>
+      <tr>
+        <td><strong>02. The Paradox Fractures</strong></td>
+        <td>Dimensional Survival Shonen</td>
+        <td>Features trendy Scarlet/Violet paradox designs; high-octane visual spectacle; existential apocalyptic stakes.</td>
+        <td class="score-cell">9.8 / 10</td>
+        <td>Very High (Multi-region temporal anomalies)</td>
+      </tr>
+      <tr>
+        <td><strong>03. The Mythic Sentinels</strong></td>
+        <td>High-Tier Hunter Guild</td>
+        <td>Expands Pokémon lore to cosmic scales; deep-sea/outer-space exploration; prestigious "True Master" hierarchy.</td>
+        <td class="score-cell">9.2 / 10</td>
+        <td>Infinite (Episodic expeditions &amp; cosmic beasts)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5: RECOMMENDED ROADMAP -->
+  <div class="section-title">5. Production Pipeline Execution Plan</div>
+  <p class="section-desc">
+    Once your team aligns on the preferred concept (or a hybrid blend), our autonomous pipeline will execute the following technical deliverables:
+  </p>
+  <ul style="margin-left: 18px; margin-bottom: 20px; font-size: 11.5px; color: #cbd5e1;">
+    <li><strong>Step 1 (World Bible &amp; Character Anchors):</strong> Compile character anchor tokens for Ash (Monarch regalia) and Red (Mt. Silver trench/cap) into <code>src/visuals/schemas.py</code>.</li>
+    <li><strong>Step 2 (Screenplay Generation):</strong> Execute <code>ScriptingEngine</code> to produce the complete Season 1 Episode 1 Pilot Shot Deck with dialogue, sound cues, and visual pacing.</li>
+    <li><strong>Step 3 (Dual-Persona TTS &amp; Audio):</strong> Synthesize authentic voices (Ash's determined, energetic cadence vs. Red's quiet, resonant tactical commands) with dynamic BGM sidechain ducking.</li>
+    <li><strong>Step 4 (Keyframes &amp; Motion):</strong> Render photorealistic 9:16 vertical / 16:9 cinematic keyframes and CFR 30 FPS motion battle sequences.</li>
+    <li><strong>Step 5 (Multi-Platform Dispatch):</strong> Auto-package trailers and teaser episodes for YouTube Shorts, Instagram Reels, and social scheduling.</li>
+  </ul>
+
+  <div class="footer-callout">
+    <div>
+      <p><strong>Autonomous Multi-Agent AI Video Studio</strong> • Active Branch: <code>dev</code></p>
+      <p style="color: #94a3b8; font-size: 11px;">Repository: <code>Goutammandloi/autonomous-video-pipeline</code></p>
+    </div>
+    <div style="font-weight: 700; color: #38bdf8;">
+      Status: Ready for Concept Selection
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
