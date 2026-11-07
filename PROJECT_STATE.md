@@ -26,8 +26,8 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
 | **Stage 0: Architecture & Research Setup** | Pipeline DAG, state tracker, edge-case registry, research agent deployment | 🟢 Completed | Antigravity + Yashu |
 | **Stage 1: Idea $\rightarrow$ Story $\rightarrow$ Script Engine** | Structured JSON screenplay generator with viral pacing, character tags, and acoustic cues | 🟢 Completed | Agentic Scripting Unit |
 | **Stage 2: Visual Bible & Keyframe Generator** | Automated prompt builder, character/environment consistency locking, reference image chaining | 🟢 Completed | Asset Generator + Multimodal Evaluator |
-| **Stage 3: Voiceover & Lip-Sync Synthesis** | Google Cloud TTS / Edge-TTS audio gen + audio alignment + lip-sync model integration | 🟡 In Progress | Audio Synthesis Unit |
-| **Stage 4: I2V Motion Generation & Asset Inset** | Image-to-Video generation (Veo / Runway / Kling / open-source) + screen replacement compositing | ⚪ Queued | Motion Engine |
+| **Stage 3: Voiceover & Lip-Sync Synthesis** | Google Cloud TTS / Edge-TTS audio gen + audio alignment + lip-sync model integration | 🟢 Completed | Audio Synthesis Unit |
+| **Stage 4: I2V Motion Generation & Asset Inset** | Image-to-Video generation (Veo / Runway / Kling / open-source) + screen replacement compositing | 🟡 In Progress | Motion Engine |
 | **Stage 5: Autonomous Assembly & QA Monitor** | FFmpeg/Remotion programmatic timeline assembly, caption burning, automated glitch & sync evaluator | ⚪ Queued | Video Assembly & QA Agent |
 | **Stage 6: Dispatch & Social Media Scheduler** | YouTube Shorts API, Instagram Graph API, scheduling queue, webhook triggers | ⚪ Queued | Social Dispatcher |
 
@@ -66,12 +66,21 @@ With an overarching **Supervisor / Evaluator Agent Loop** that conducts automate
   * `deep-research-agent` (Autonomous academic, technical, and market reconnaissance)
   * `system-design` (Architectural diagrams, service decomposition, and interface contracts)
 
-### [2026-10-07] Feature 2: Visual Bible & Keyframe Synthesis (Stage 2 Complete)
+### [2026-11-07] Feature 2: Visual Bible & Keyframe Synthesis (Stage 2 Complete)
 - Implemented `src/visuals/schemas.py`: Pydantic models for `KeyframeAsset`, `KeyframeMetadata`, and `VisualQAResult`.
 - Implemented `src/visuals/prompt_builder.py`: Rules mapping shot angles to prime lenses (85mm, 35mm, 24mm), negative quality constraints, and character anchor token injection.
 - Implemented `src/visuals/evaluator.py`: `VisualQAEvaluator` utilizing OpenCV Laplacian variance blur detection, aspect ratio validation, and Gemini 2.5 Flash Vision multimodal audit.
 - Implemented `src/visuals/generator.py`: `KeyframeGenerator` supporting Google Imagen 3 API dispatch and high-fidelity local rendering with feedback-loop retries.
 - Verified test suite: `tests/test_visual_engine.py` successfully synthesized and verified all 5 keyframes (`data/keyframes/shot_1_keyframe.png` through `shot_5_keyframe.png`) at 1080x1920 (9:16 vertical), scoring 9.06/10 on QA.
 - Updated Knowledge Graph: Ingested keyframes and visual modules into `data/knowledge_graph/`, expanding graph memory to 71 nodes and 57 relationships.
+
+### [2026-11-07] Feature 3: Voiceover, Sidechain Ducking & Acoustic Mastering (Stage 3 Complete)
+- Git & Remote Sync: Synchronized local codebase to [GitHub: Goutammandloi/autonomous-video-pipeline](https://github.com/Goutammandloi/autonomous-video-pipeline); created and checked out active `dev` working branch.
+- Implemented `src/audio/schemas.py`: Data models for `VoicePersona`, `WordTiming`, `DialogueAudioTrack`, and `AcousticMasterReport`.
+- Implemented `src/audio/tts_engine.py`: Multi-persona voice generator mapping Didi (`hi-IN-SwaraNeural` / Zira) and Rajat (`hi-IN-MadhurNeural` / David) with offline SAPI fallback.
+- Implemented `src/audio/subtitles.py`: Automated word-level timestamp alignment and SubRip (`.srt`) export.
+- Implemented `src/audio/mixer.py`: Dynamic sidechain compression engine attenuating BGM by 12.0 dB during dialogue bursts; normalized master soundtrack to ITU-R BS.1770 -14.0 LUFS (-1.0 dBTP ceiling).
+- Verified test suite: `tests/test_audio_engine.py` validated all 5 shots dialogue synthesis, subtitle generation (`data/audio/subtitles.srt`), and mastered composite (`data/audio/master_soundtrack.wav`).
+- Updated Knowledge Graph: Ingested audio modules and assets, expanding topology to 96 nodes and 79 relationships.
 
 

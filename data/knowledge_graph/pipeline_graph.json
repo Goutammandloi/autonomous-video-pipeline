@@ -1,6 +1,195 @@
 {
   "nodes": [
     {
+      "id": "mod_mixer",
+      "label": "mixer.py",
+      "type": "CodeModule",
+      "path": "src/audio/mixer.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_AcousticMixer",
+      "label": "AcousticMixer",
+      "type": "ClassSchema",
+      "source": "mod_mixer",
+      "group": "schema"
+    },
+    {
+      "id": "fn_mixer_mix_soundtrack",
+      "label": "mix_soundtrack()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "fn_mixer__generate_ambient_bgm",
+      "label": "_generate_ambient_bgm()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "fn_mixer__smooth_envelope",
+      "label": "_smooth_envelope()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "fn_mixer__master_to_lufs",
+      "label": "_master_to_lufs()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "fn_mixer__read_wav_as_float",
+      "label": "_read_wav_as_float()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "fn_mixer__write_float_as_wav",
+      "label": "_write_float_as_wav()",
+      "type": "Function",
+      "source": "mod_mixer",
+      "group": "code"
+    },
+    {
+      "id": "mod_schemas",
+      "label": "schemas.py",
+      "type": "CodeModule",
+      "path": "src/visuals/schemas.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_VoicePersona",
+      "label": "VoicePersona",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_WordTiming",
+      "label": "WordTiming",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_DialogueAudioTrack",
+      "label": "DialogueAudioTrack",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "cls_AcousticMasterReport",
+      "label": "AcousticMasterReport",
+      "type": "ClassSchema",
+      "source": "mod_schemas",
+      "group": "schema"
+    },
+    {
+      "id": "mod_subtitles",
+      "label": "subtitles.py",
+      "type": "CodeModule",
+      "path": "src/audio/subtitles.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_SubtitleGenerator",
+      "label": "SubtitleGenerator",
+      "type": "ClassSchema",
+      "source": "mod_subtitles",
+      "group": "schema"
+    },
+    {
+      "id": "fn_subtitles_estimate_word_timings",
+      "label": "estimate_word_timings()",
+      "type": "Function",
+      "source": "mod_subtitles",
+      "group": "code"
+    },
+    {
+      "id": "fn_subtitles_export_srt",
+      "label": "export_srt()",
+      "type": "Function",
+      "source": "mod_subtitles",
+      "group": "code"
+    },
+    {
+      "id": "fn_subtitles_format_timestamp",
+      "label": "format_timestamp()",
+      "type": "Function",
+      "source": "mod_subtitles",
+      "group": "code"
+    },
+    {
+      "id": "mod_tts_engine",
+      "label": "tts_engine.py",
+      "type": "CodeModule",
+      "path": "src/audio/tts_engine.py",
+      "group": "code"
+    },
+    {
+      "id": "cls_TTSEngine",
+      "label": "TTSEngine",
+      "type": "ClassSchema",
+      "source": "mod_tts_engine",
+      "group": "schema"
+    },
+    {
+      "id": "fn_tts_engine_register_persona",
+      "label": "register_persona()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "fn_tts_engine_synthesize_shot_audio",
+      "label": "synthesize_shot_audio()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "fn_tts_engine_synthesize_deck_dialogues",
+      "label": "synthesize_deck_dialogues()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "fn_tts_engine__synthesize_windows_sapi",
+      "label": "_synthesize_windows_sapi()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "fn_tts_engine__synthesize_pcm_fallback",
+      "label": "_synthesize_pcm_fallback()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "fn_tts_engine__get_wav_duration",
+      "label": "_get_wav_duration()",
+      "type": "Function",
+      "source": "mod_tts_engine",
+      "group": "code"
+    },
+    {
+      "id": "mod___init__",
+      "label": "__init__.py",
+      "type": "CodeModule",
+      "path": "src/visuals/__init__.py",
+      "group": "code"
+    },
+    {
       "id": "mod_generator",
       "label": "generator.py",
       "type": "CodeModule",
@@ -47,13 +236,6 @@
       "label": "prompt_templates.py",
       "type": "CodeModule",
       "path": "src/scripting/prompt_templates.py",
-      "group": "code"
-    },
-    {
-      "id": "mod_schemas",
-      "label": "schemas.py",
-      "type": "CodeModule",
-      "path": "src/visuals/schemas.py",
       "group": "code"
     },
     {
@@ -118,13 +300,6 @@
       "type": "ClassSchema",
       "source": "mod_schemas",
       "group": "schema"
-    },
-    {
-      "id": "mod___init__",
-      "label": "__init__.py",
-      "type": "CodeModule",
-      "path": "src/visuals/__init__.py",
-      "group": "code"
     },
     {
       "id": "mod_evaluator",
@@ -477,54 +652,59 @@
   ],
   "edges": [
     {
-      "from": "mod_generator",
-      "to": "cls_ScriptingEngine",
+      "from": "mod_mixer",
+      "to": "cls_AcousticMixer",
       "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator_evaluate_shot_deck",
+      "from": "mod_mixer",
+      "to": "fn_mixer_mix_soundtrack",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator_generate_shot_deck",
+      "from": "mod_mixer",
+      "to": "fn_mixer__generate_ambient_bgm",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator__call_gemini_generator",
+      "from": "mod_mixer",
+      "to": "fn_mixer__smooth_envelope",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator__synthesize_rule_based_shot_deck",
+      "from": "mod_mixer",
+      "to": "fn_mixer__master_to_lufs",
       "relationship": "DEFINES_FUNC"
     },
     {
-      "from": "mod_generator",
-      "to": "cls_KeyframeGenerator",
+      "from": "mod_mixer",
+      "to": "fn_mixer__read_wav_as_float",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_mixer",
+      "to": "fn_mixer__write_float_as_wav",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_schemas",
+      "to": "cls_VoicePersona",
       "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator_generate_shot_keyframe",
-      "relationship": "DEFINES_FUNC"
+      "from": "mod_schemas",
+      "to": "cls_WordTiming",
+      "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator_generate_shot_deck_keyframes",
-      "relationship": "DEFINES_FUNC"
+      "from": "mod_schemas",
+      "to": "cls_DialogueAudioTrack",
+      "relationship": "DEFINES_CLASS"
     },
     {
-      "from": "mod_generator",
-      "to": "fn_generator__dispatch_imagen3",
-      "relationship": "DEFINES_FUNC"
-    },
-    {
-      "from": "mod_generator",
-      "to": "fn_generator__render_cinematic_keyframe",
-      "relationship": "DEFINES_FUNC"
+      "from": "mod_schemas",
+      "to": "cls_AcousticMasterReport",
+      "relationship": "DEFINES_CLASS"
     },
     {
       "from": "mod_schemas",
@@ -585,6 +765,111 @@
       "from": "mod_schemas",
       "to": "cls_KeyframeAsset",
       "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_subtitles",
+      "to": "cls_SubtitleGenerator",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_subtitles",
+      "to": "fn_subtitles_estimate_word_timings",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_subtitles",
+      "to": "fn_subtitles_export_srt",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_subtitles",
+      "to": "fn_subtitles_format_timestamp",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "cls_TTSEngine",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine_register_persona",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine_synthesize_shot_audio",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine_synthesize_deck_dialogues",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine__synthesize_windows_sapi",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine__synthesize_pcm_fallback",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_tts_engine",
+      "to": "fn_tts_engine__get_wav_duration",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "cls_ScriptingEngine",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator_evaluate_shot_deck",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator_generate_shot_deck",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator__call_gemini_generator",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator__synthesize_rule_based_shot_deck",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "cls_KeyframeGenerator",
+      "relationship": "DEFINES_CLASS"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator_generate_shot_keyframe",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator_generate_shot_deck_keyframes",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator__dispatch_imagen3",
+      "relationship": "DEFINES_FUNC"
+    },
+    {
+      "from": "mod_generator",
+      "to": "fn_generator__render_cinematic_keyframe",
+      "relationship": "DEFINES_FUNC"
     },
     {
       "from": "mod_evaluator",
@@ -763,8 +1048,8 @@
     }
   ],
   "metrics": {
-    "node_count": 71,
-    "edge_count": 57,
-    "density": 0.011468812877263581
+    "node_count": 96,
+    "edge_count": 79,
+    "density": 0.008662280701754385
   }
 }

@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:05,299
+Didi: Rajat! Phir se Netflix? Placement season chal raha hai!
+
+2
+00:00:03,000 --> 00:00:06,849
+Rajat: Arey tension kyun le rahi ho Didi, chill karo na!
+
+3
+00:00:06,500 --> 00:00:10,889
+Rajat: Netflix nahi, Appin Technology ka live cyber lab chal raha hai!
+
+4
+00:00:10,500 --> 00:00:14,604
+Didi: Wait... practical training aur 100% placement support?
+
+5
+00:00:14,500 --> 00:00:19,759
+Rajat: Toh career mein upgrade chahiye? Abhi bio ke link se free demo book karo!
