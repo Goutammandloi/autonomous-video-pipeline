@@ -1031,6 +1031,33 @@
       "url": "https://www.linkedin.com/feed/update/urn:li:digitalmediaAsset:db54f8a38f9a"
     },
     {
+      "id": "campaign_batch_e300b913",
+      "label": "Campaign: Appin Career Ka Asli Netflix",
+      "type": "ScheduledCampaign",
+      "group": "distribution"
+    },
+    {
+      "id": "job_job_youtube_shorts_9b750c",
+      "label": "Post: Youtube Shorts",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://youtube.com/shorts/yt_c3fb4cdacb"
+    },
+    {
+      "id": "job_job_instagram_reels_19f85d",
+      "label": "Post: Instagram Reels",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://instagram.com/reel/ig_media_bc9ae421f2"
+    },
+    {
+      "id": "job_job_linkedin_134017",
+      "label": "Post: Linkedin",
+      "type": "PlatformDispatchJob",
+      "group": "distribution",
+      "url": "https://www.linkedin.com/feed/update/urn:li:digitalmediaAsset:1d796d3c7de1"
+    },
+    {
       "id": "skill_ai-video-generation",
       "label": "Skill: ai-video-generation",
       "type": "AgentSkill",
@@ -1853,11 +1880,26 @@
       "from": "campaign_batch_aa3efa50",
       "to": "job_job_linkedin_4ec3b3",
       "relationship": "DISPATCH_CHANNEL"
+    },
+    {
+      "from": "campaign_batch_e300b913",
+      "to": "job_job_youtube_shorts_9b750c",
+      "relationship": "DISPATCH_CHANNEL"
+    },
+    {
+      "from": "campaign_batch_e300b913",
+      "to": "job_job_instagram_reels_19f85d",
+      "relationship": "DISPATCH_CHANNEL"
+    },
+    {
+      "from": "campaign_batch_e300b913",
+      "to": "job_job_linkedin_134017",
+      "relationship": "DISPATCH_CHANNEL"
     }
   ],
   "metrics": {
-    "node_count": 166,
-    "edge_count": 144,
-    "density": 0.005257393209200438
+    "node_count": 170,
+    "edge_count": 147,
+    "density": 0.0051166028541594155
   }
 }

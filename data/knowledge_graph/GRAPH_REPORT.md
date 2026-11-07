@@ -1,18 +1,18 @@
 # 🕸️ Pipeline Knowledge Graph Audit Report
 
-- **Total Entities (Nodes):** 166
-- **Total Relationships (Edges):** 144
-- **Graph Density:** 0.0053
+- **Total Entities (Nodes):** 170
+- **Total Relationships (Edges):** 147
+- **Graph Density:** 0.0051
 
 ## Node Distribution by Domain
 - **Code:** 72 nodes
 - **Schema:** 47 nodes
 - **Skill:** 17 nodes
+- **Distribution:** 8 nodes
 - **Audio:** 7 nodes
 - **Shot:** 5 nodes
 - **Keyframe:** 5 nodes
 - **Video:** 5 nodes
-- **Distribution:** 4 nodes
 - **Character:** 2 nodes
 - **Narrative:** 1 nodes
 - **Master:** 1 nodes
